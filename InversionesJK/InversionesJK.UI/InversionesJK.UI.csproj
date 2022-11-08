@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Acercade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Acercade.Designer.cs">
+      <DependentUpon>Acercade.cs</DependentUpon>
+    </Compile>
     <Compile Include="AgregarLoterias.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,6 +162,9 @@
     <Compile Include="ReporteVentas.Designer.cs">
       <DependentUpon>ReporteVentas.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Acercade.resx">
+      <DependentUpon>Acercade.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AgregarLoterias.resx">
       <DependentUpon>AgregarLoterias.cs</DependentUpon>
     </EmbeddedResource>
@@ -231,6 +240,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Entidades\Entidades.csproj">
+      <Project>{a95ce7a0-c184-4fe3-94e9-e1bf8963fc6c}</Project>
+      <Name>Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Negocios\Negocios.csproj">
+      <Project>{d5c963fa-c9d5-497f-b091-aa5a0ae3acbf}</Project>
+      <Name>Negocios</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

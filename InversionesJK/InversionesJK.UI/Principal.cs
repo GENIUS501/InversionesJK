@@ -226,7 +226,9 @@ namespace InversionesJK.UI
         {
             try
             {
-
+                Acercade Frm = new Acercade();
+                Frm.MdiParent = this;
+                Frm.Show();
             }
             catch (Exception ex)
             {

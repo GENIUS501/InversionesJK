@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="InversionesJKModelStoreContainer" CdmEntityContainer="InversionesJKEntities">
+    <EntitySetMapping Name="Bitacora_ingreso_salida">
+      <EntityTypeMapping TypeName="InversionesJKModel.Bitacora_ingreso_salida">
+        <MappingFragment StoreEntitySet="Bitacora_ingreso_salida">
+          <ScalarProperty Name="codigo_ingreso_salida" ColumnName="codigo_ingreso_salida" />
+          <ScalarProperty Name="fecha_hora_ingreso" ColumnName="fecha_hora_ingreso" />
+          <ScalarProperty Name="fecha_hora_salida" ColumnName="fecha_hora_salida" />
+          <ScalarProperty Name="Id_Usuario" ColumnName="Id_Usuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bitacora_movimientos">
+      <EntityTypeMapping TypeName="InversionesJKModel.Bitacora_movimientos">
+        <MappingFragment StoreEntitySet="Bitacora_movimientos">
+          <ScalarProperty Name="codigo_movimiento_usuario" ColumnName="codigo_movimiento_usuario" />
+          <ScalarProperty Name="fecha_hora_movimiento" ColumnName="fecha_hora_movimiento" />
+          <ScalarProperty Name="tipo_movimiento" ColumnName="tipo_movimiento" />
+          <ScalarProperty Name="modulo" ColumnName="modulo" />
+          <ScalarProperty Name="Id_Usuario" ColumnName="Id_Usuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Loterias">
+      <EntityTypeMapping TypeName="InversionesJKModel.Loterias">
+        <MappingFragment StoreEntitySet="Loterias">
+          <ScalarProperty Name="ID_loteria" ColumnName="ID_loteria" />
+          <ScalarProperty Name="Nombre_loteria" ColumnName="Nombre_loteria" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Maquinas">
+      <EntityTypeMapping TypeName="InversionesJKModel.Maquinas">
+        <MappingFragment StoreEntitySet="Maquinas">
+          <ScalarProperty Name="ID_maquina" ColumnName="ID_maquina" />
+          <ScalarProperty Name="Nombre_maquina" ColumnName="Nombre_maquina" />
+          <ScalarProperty Name="fecha_maquina" ColumnName="fecha_maquina" />
+          <ScalarProperty Name="Ubicacion_maquina" ColumnName="Ubicacion_maquina" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Permisos">
+      <EntityTypeMapping TypeName="InversionesJKModel.Permisos">
+        <MappingFragment StoreEntitySet="Permisos">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Modulo" ColumnName="Modulo" />
+          <ScalarProperty Name="Accion" ColumnName="Accion" />
+          <ScalarProperty Name="Id_Rol" ColumnName="Id_Rol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="InversionesJKModel.Roles">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="Id_Rol" ColumnName="Id_Rol" />
+          <ScalarProperty Name="Nombre_rol" ColumnName="Nombre_rol" />
+          <ScalarProperty Name="Detalle_rol" ColumnName="Detalle_rol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="InversionesJKModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuarios">
+      <EntityTypeMapping TypeName="InversionesJKModel.Usuarios">
+        <MappingFragment StoreEntitySet="Usuarios">
+          <ScalarProperty Name="Id_Usuario" ColumnName="Id_Usuario" />
+          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+          <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+          <ScalarProperty Name="Clave" ColumnName="Clave" />
+          <ScalarProperty Name="Id_Rol" ColumnName="Id_Rol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ventas">
+      <EntityTypeMapping TypeName="InversionesJKModel.Ventas">
+        <MappingFragment StoreEntitySet="Ventas">
+          <ScalarProperty Name="ID_venta" ColumnName="ID_venta" />
+          <ScalarProperty Name="fecha_venta" ColumnName="fecha_venta" />
+          <ScalarProperty Name="Cantidad_de_Venta" ColumnName="Cantidad_de_Venta" />
+          <ScalarProperty Name="Premio_a_pagar" ColumnName="Premio_a_pagar" />
+          <ScalarProperty Name="Apuesta" ColumnName="Apuesta" />
+          <ScalarProperty Name="Multiplicar_Apuesta" ColumnName="Multiplicar_Apuesta" />
+          <ScalarProperty Name="ID_maquina" ColumnName="ID_maquina" />
+          <ScalarProperty Name="Id_Usuario" ColumnName="Id_Usuario" />
+          <ScalarProperty Name="ID_loteria" ColumnName="ID_loteria" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
