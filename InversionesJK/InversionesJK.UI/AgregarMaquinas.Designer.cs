@@ -29,21 +29,24 @@ namespace InversionesJK.UI
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgregarMaquinas));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.GrpMaquina = new System.Windows.Forms.GroupBox();
             this.dtp_fecha_maq = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_ubicacion_maq = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.LblMaquina = new System.Windows.Forms.Label();
             this.txt_codigo_maquina = new System.Windows.Forms.MaskedTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_nombre_maquina = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.GrpMaquina.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -68,6 +71,7 @@ namespace InversionesJK.UI
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAceptar
             // 
@@ -81,23 +85,24 @@ namespace InversionesJK.UI
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
-            // groupBox1
+            // GrpMaquina
             // 
-            this.groupBox1.Controls.Add(this.dtp_fecha_maq);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.txt_ubicacion_maq);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txt_codigo_maquina);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.txt_nombre_maquina);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Location = new System.Drawing.Point(34, 70);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(152, 244);
-            this.groupBox1.TabIndex = 83;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Datos de Maquina";
+            this.GrpMaquina.Controls.Add(this.dtp_fecha_maq);
+            this.GrpMaquina.Controls.Add(this.label1);
+            this.GrpMaquina.Controls.Add(this.txt_ubicacion_maq);
+            this.GrpMaquina.Controls.Add(this.LblMaquina);
+            this.GrpMaquina.Controls.Add(this.txt_codigo_maquina);
+            this.GrpMaquina.Controls.Add(this.label3);
+            this.GrpMaquina.Controls.Add(this.txt_nombre_maquina);
+            this.GrpMaquina.Controls.Add(this.label5);
+            this.GrpMaquina.Location = new System.Drawing.Point(34, 70);
+            this.GrpMaquina.Name = "GrpMaquina";
+            this.GrpMaquina.Size = new System.Drawing.Size(152, 244);
+            this.GrpMaquina.TabIndex = 83;
+            this.GrpMaquina.TabStop = false;
+            this.GrpMaquina.Text = "Datos de Maquina";
             // 
             // dtp_fecha_maq
             // 
@@ -123,14 +128,14 @@ namespace InversionesJK.UI
             this.txt_ubicacion_maq.Size = new System.Drawing.Size(100, 20);
             this.txt_ubicacion_maq.TabIndex = 26;
             // 
-            // label2
+            // LblMaquina
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 26);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(99, 13);
-            this.label2.TabIndex = 22;
-            this.label2.Text = "Codigo de Maquina";
+            this.LblMaquina.AutoSize = true;
+            this.LblMaquina.Location = new System.Drawing.Point(12, 26);
+            this.LblMaquina.Name = "LblMaquina";
+            this.LblMaquina.Size = new System.Drawing.Size(99, 13);
+            this.LblMaquina.TabIndex = 22;
+            this.LblMaquina.Text = "Codigo de Maquina";
             // 
             // txt_codigo_maquina
             // 
@@ -165,20 +170,28 @@ namespace InversionesJK.UI
             this.label5.TabIndex = 16;
             this.label5.Text = "Fecha";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // AgregarMaquinas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(230, 361);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.GrpMaquina);
+            this.MaximizeBox = false;
             this.Name = "AgregarMaquinas";
             this.Text = "Agregar Maquinas";
+            this.Load += new System.EventHandler(this.AgregarMaquinas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.GrpMaquina.ResumeLayout(false);
+            this.GrpMaquina.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -188,14 +201,15 @@ namespace InversionesJK.UI
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAceptar;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox GrpMaquina;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label LblMaquina;
         private System.Windows.Forms.MaskedTextBox txt_codigo_maquina;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txt_nombre_maquina;
         private System.Windows.Forms.DateTimePicker dtp_fecha_maq;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_ubicacion_maq;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

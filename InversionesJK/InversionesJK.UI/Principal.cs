@@ -133,6 +133,8 @@ namespace InversionesJK.UI
             try
             {
                 addMachines = new AgregarMaquinas();
+                addMachines.Usuario = 1;
+                addMachines.Accion = "A";
                 addMachines.MdiParent = this;
                 addMachines.Show();
             }
@@ -147,6 +149,8 @@ namespace InversionesJK.UI
             try
             {
                 showMachines = new MostrarMaquinas();
+                showMachines.Usuario = 1;
+                showMachines.Id_Rol = 1;
                 showMachines.MdiParent = this;
                 showMachines.Show();
             }
