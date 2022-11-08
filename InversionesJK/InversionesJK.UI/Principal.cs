@@ -101,6 +101,8 @@ namespace InversionesJK.UI
             try
             {
                 addLotteries = new AgregarLoterias();
+                addLotteries.Accion = "A";
+                addLotteries.Usuario = 1;
                 addLotteries.MdiParent = this;
                 addLotteries.Show();
             }
@@ -115,6 +117,8 @@ namespace InversionesJK.UI
             try
             {
                 showLotteries = new MostrarLoterias();
+                showLotteries.Usuario = 1;
+                showLotteries.Id_Rol = 1;
                 showLotteries.MdiParent = this;
                 showLotteries.Show();
             }

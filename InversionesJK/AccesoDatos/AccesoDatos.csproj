@@ -60,6 +60,7 @@
     <Compile Include="Bitacora_movimientos.cs">
       <DependentUpon>InversionesJK.tt</DependentUpon>
     </Compile>
+    <Compile Include="DBitacora_movimientos.cs" />
     <Compile Include="DLoterias.cs" />
     <Compile Include="InversionesJK.Context.cs">
       <AutoGen>True</AutoGen>

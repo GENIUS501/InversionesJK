@@ -29,6 +29,7 @@ namespace InversionesJK.UI
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgregarLoterias));
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
@@ -36,10 +37,12 @@ namespace InversionesJK.UI
             this.label3 = new System.Windows.Forms.Label();
             this.txt_codigo_loteria = new System.Windows.Forms.MaskedTextBox();
             this.LblCodigoLoteria = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.GrpLoteria = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.groupBox1.SuspendLayout();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.GrpLoteria.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancelar
@@ -54,6 +57,7 @@ namespace InversionesJK.UI
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAceptar
             // 
@@ -102,18 +106,18 @@ namespace InversionesJK.UI
             this.LblCodigoLoteria.TabIndex = 18;
             this.LblCodigoLoteria.Text = "Codigo de Loteria";
             // 
-            // groupBox1
+            // GrpLoteria
             // 
-            this.groupBox1.Controls.Add(this.LblCodigoLoteria);
-            this.groupBox1.Controls.Add(this.txt_codigo_loteria);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.txt_nombre_loteria);
-            this.groupBox1.Location = new System.Drawing.Point(41, 80);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(170, 150);
-            this.groupBox1.TabIndex = 14;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Datos de Loteria";
+            this.GrpLoteria.Controls.Add(this.LblCodigoLoteria);
+            this.GrpLoteria.Controls.Add(this.txt_codigo_loteria);
+            this.GrpLoteria.Controls.Add(this.label3);
+            this.GrpLoteria.Controls.Add(this.txt_nombre_loteria);
+            this.GrpLoteria.Location = new System.Drawing.Point(41, 80);
+            this.GrpLoteria.Name = "GrpLoteria";
+            this.GrpLoteria.Size = new System.Drawing.Size(170, 150);
+            this.GrpLoteria.TabIndex = 14;
+            this.GrpLoteria.TabStop = false;
+            this.GrpLoteria.Text = "Datos de Loteria";
             // 
             // pictureBox1
             // 
@@ -125,21 +129,28 @@ namespace InversionesJK.UI
             this.pictureBox1.TabIndex = 83;
             this.pictureBox1.TabStop = false;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // AgregarLoterias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(250, 296);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.GrpLoteria);
+            this.MaximizeBox = false;
             this.Name = "AgregarLoterias";
             this.Text = "AgregarLoterias";
             this.Load += new System.EventHandler(this.AgregarLoterias_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.GrpLoteria.ResumeLayout(false);
+            this.GrpLoteria.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -152,7 +163,8 @@ namespace InversionesJK.UI
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.MaskedTextBox txt_codigo_loteria;
         private System.Windows.Forms.Label LblCodigoLoteria;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox GrpLoteria;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

@@ -29,6 +29,7 @@ namespace InversionesJK.UI
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MostrarLoterias));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dat_principal = new System.Windows.Forms.DataGridView();
@@ -43,9 +44,11 @@ namespace InversionesJK.UI
             this.btn_buscar = new System.Windows.Forms.Button();
             this.txt_buscar_loteria = new System.Windows.Forms.MaskedTextBox();
             this.txt_nombre = new System.Windows.Forms.TextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dat_principal)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -60,11 +63,14 @@ namespace InversionesJK.UI
             // 
             // dat_principal
             // 
+            this.dat_principal.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dat_principal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dat_principal.Location = new System.Drawing.Point(32, 241);
             this.dat_principal.Name = "dat_principal";
+            this.dat_principal.ReadOnly = true;
             this.dat_principal.Size = new System.Drawing.Size(739, 185);
             this.dat_principal.TabIndex = 86;
+            this.dat_principal.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dat_principal_CellClick);
             // 
             // btn_consultar
             // 
@@ -76,6 +82,7 @@ namespace InversionesJK.UI
             this.btn_consultar.TabIndex = 85;
             this.btn_consultar.Text = "Consultar";
             this.btn_consultar.UseVisualStyleBackColor = true;
+            this.btn_consultar.Click += new System.EventHandler(this.btn_consultar_Click);
             // 
             // btn_eliminar
             // 
@@ -87,6 +94,7 @@ namespace InversionesJK.UI
             this.btn_eliminar.TabIndex = 84;
             this.btn_eliminar.Text = "Eliminar";
             this.btn_eliminar.UseVisualStyleBackColor = true;
+            this.btn_eliminar.Click += new System.EventHandler(this.btn_eliminar_Click);
             // 
             // btn_editar
             // 
@@ -98,6 +106,7 @@ namespace InversionesJK.UI
             this.btn_editar.TabIndex = 83;
             this.btn_editar.Text = "Modificar";
             this.btn_editar.UseVisualStyleBackColor = true;
+            this.btn_editar.Click += new System.EventHandler(this.btn_editar_Click);
             // 
             // btn_agregar
             // 
@@ -109,6 +118,7 @@ namespace InversionesJK.UI
             this.btn_agregar.TabIndex = 82;
             this.btn_agregar.Text = "Agregar";
             this.btn_agregar.UseVisualStyleBackColor = true;
+            this.btn_agregar.Click += new System.EventHandler(this.btn_agregar_Click);
             // 
             // groupBox1
             // 
@@ -134,6 +144,7 @@ namespace InversionesJK.UI
             this.btn_buscar_nombre.Size = new System.Drawing.Size(25, 20);
             this.btn_buscar_nombre.TabIndex = 3;
             this.btn_buscar_nombre.UseVisualStyleBackColor = true;
+            this.btn_buscar_nombre.Click += new System.EventHandler(this.btn_buscar_nombre_Click);
             // 
             // label1
             // 
@@ -162,6 +173,7 @@ namespace InversionesJK.UI
             this.btn_buscar.Size = new System.Drawing.Size(25, 20);
             this.btn_buscar.TabIndex = 1;
             this.btn_buscar.UseVisualStyleBackColor = true;
+            this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
             // 
             // txt_buscar_loteria
             // 
@@ -178,10 +190,15 @@ namespace InversionesJK.UI
             this.txt_nombre.Size = new System.Drawing.Size(100, 20);
             this.txt_nombre.TabIndex = 2;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // MostrarLoterias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dat_principal);
@@ -190,12 +207,15 @@ namespace InversionesJK.UI
             this.Controls.Add(this.btn_editar);
             this.Controls.Add(this.btn_agregar);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
             this.Name = "MostrarLoterias";
             this.Text = "MostrarLoterias";
+            this.Load += new System.EventHandler(this.MostrarLoterias_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dat_principal)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -215,5 +235,6 @@ namespace InversionesJK.UI
         private System.Windows.Forms.Button btn_buscar;
         private System.Windows.Forms.MaskedTextBox txt_buscar_loteria;
         private System.Windows.Forms.TextBox txt_nombre;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
