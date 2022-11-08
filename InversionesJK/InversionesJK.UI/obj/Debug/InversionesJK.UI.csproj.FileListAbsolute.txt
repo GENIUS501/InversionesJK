@@ -26,31 +26,3 @@ C:\Users\David\OneDrive - Caja Costarricense de Seguro Social\UTC\Proyecto final
 C:\Users\David\OneDrive - Caja Costarricense de Seguro Social\UTC\Proyecto final\InversionesJK\InversionesJK\InversionesJK.UI\obj\Debug\InversionesJK.UI.ReporteMaquinas.resources
 C:\Users\David\OneDrive - Caja Costarricense de Seguro Social\UTC\Proyecto final\InversionesJK\InversionesJK\InversionesJK.UI\obj\Debug\InversionesJK.UI.ReporteVentas.resources
 C:\Users\David\OneDrive - Caja Costarricense de Seguro Social\UTC\Proyecto final\InversionesJK\InversionesJK\InversionesJK.UI\obj\Debug\InversionesJK.UI.Login.resources
-C:\Users\JavierArguedasDíaz\source\repos\InversionesJK\InversionesJK\InversionesJK.UI\bin\Debug\InversionesJK.UI.exe.config
-C:\Users\JavierArguedasDíaz\source\repos\InversionesJK\InversionesJK\InversionesJK.UI\bin\Debug\InversionesJK.UI.exe
-C:\Users\JavierArguedasDíaz\source\repos\InversionesJK\InversionesJK\InversionesJK.UI\bin\Debug\InversionesJK.UI.pdb
-C:\Users\JavierArguedasDíaz\source\repos\InversionesJK\InversionesJK\InversionesJK.UI\obj\Debug\InversionesJK.UI.csproj.AssemblyReference.cache
-C:\Users\JavierArguedasDíaz\source\repos\InversionesJK\InversionesJK\InversionesJK.UI\obj\Debug\InversionesJK.UI.Acercade.resources
-C:\Users\JavierArguedasDíaz\source\repos\InversionesJK\InversionesJK\InversionesJK.UI\obj\Debug\InversionesJK.UI.AgregarLoterias.resources
-C:\Users\JavierArguedasDíaz\source\repos\InversionesJK\InversionesJK\InversionesJK.UI\obj\Debug\InversionesJK.UI.AgregarMaquinas.resources
-C:\Users\JavierArguedasDíaz\source\repos\InversionesJK\InversionesJK\InversionesJK.UI\obj\Debug\InversionesJK.UI.AgregarRolesyPermisos.resources
-C:\Users\JavierArguedasDíaz\source\repos\InversionesJK\InversionesJK\InversionesJK.UI\obj\Debug\InversionesJK.UI.AgregarUsuarios.resources
-C:\Users\JavierArguedasDíaz\source\repos\InversionesJK\InversionesJK\InversionesJK.UI\obj\Debug\InversionesJK.UI.AgregarVentas.resources
-C:\Users\JavierArguedasDíaz\source\repos\InversionesJK\InversionesJK\InversionesJK.UI\obj\Debug\InversionesJK.UI.Ayuda.resources
-C:\Users\JavierArguedasDíaz\source\repos\InversionesJK\InversionesJK\InversionesJK.UI\obj\Debug\InversionesJK.UI.Bitacora_Ingresos.resources
-C:\Users\JavierArguedasDíaz\source\repos\InversionesJK\InversionesJK\InversionesJK.UI\obj\Debug\InversionesJK.UI.Bitacora_Movimientos.resources
-C:\Users\JavierArguedasDíaz\source\repos\InversionesJK\InversionesJK\InversionesJK.UI\obj\Debug\InversionesJK.UI.Login.resources
-C:\Users\JavierArguedasDíaz\source\repos\InversionesJK\InversionesJK\InversionesJK.UI\obj\Debug\InversionesJK.UI.MostrarLoterias.resources
-C:\Users\JavierArguedasDíaz\source\repos\InversionesJK\InversionesJK\InversionesJK.UI\obj\Debug\InversionesJK.UI.MostrarMaquinas.resources
-C:\Users\JavierArguedasDíaz\source\repos\InversionesJK\InversionesJK\InversionesJK.UI\obj\Debug\InversionesJK.UI.MostrarRolesyPermisos.resources
-C:\Users\JavierArguedasDíaz\source\repos\InversionesJK\InversionesJK\InversionesJK.UI\obj\Debug\InversionesJK.UI.MostrarUsuarios.resources
-C:\Users\JavierArguedasDíaz\source\repos\InversionesJK\InversionesJK\InversionesJK.UI\obj\Debug\InversionesJK.UI.MostrarVentas.resources
-C:\Users\JavierArguedasDíaz\source\repos\InversionesJK\InversionesJK\InversionesJK.UI\obj\Debug\InversionesJK.UI.Principal.resources
-C:\Users\JavierArguedasDíaz\source\repos\InversionesJK\InversionesJK\InversionesJK.UI\obj\Debug\InversionesJK.UI.Properties.Resources.resources
-C:\Users\JavierArguedasDíaz\source\repos\InversionesJK\InversionesJK\InversionesJK.UI\obj\Debug\InversionesJK.UI.ReporteLoteria.resources
-C:\Users\JavierArguedasDíaz\source\repos\InversionesJK\InversionesJK\InversionesJK.UI\obj\Debug\InversionesJK.UI.ReporteMaquinas.resources
-C:\Users\JavierArguedasDíaz\source\repos\InversionesJK\InversionesJK\InversionesJK.UI\obj\Debug\InversionesJK.UI.ReporteVentas.resources
-C:\Users\JavierArguedasDíaz\source\repos\InversionesJK\InversionesJK\InversionesJK.UI\obj\Debug\InversionesJK.UI.csproj.GenerateResource.cache
-C:\Users\JavierArguedasDíaz\source\repos\InversionesJK\InversionesJK\InversionesJK.UI\obj\Debug\InversionesJK.UI.csproj.CoreCompileInputs.cache
-C:\Users\JavierArguedasDíaz\source\repos\InversionesJK\InversionesJK\InversionesJK.UI\obj\Debug\InversionesJK.UI.exe
-C:\Users\JavierArguedasDíaz\source\repos\InversionesJK\InversionesJK\InversionesJK.UI\obj\Debug\InversionesJK.UI.pdb
