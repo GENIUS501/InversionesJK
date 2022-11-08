@@ -34,14 +34,14 @@ namespace InversionesJK.UI
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dtp_fecha_maq = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txt_ubicacion_maq = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_codigo_maquina = new System.Windows.Forms.MaskedTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_nombre_maquina = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txt_ubicacion_maq = new System.Windows.Forms.TextBox();
-            this.dtp_fecha_maq = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -49,7 +49,7 @@ namespace InversionesJK.UI
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(111, 15);
+            this.pictureBox1.Location = new System.Drawing.Point(34, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(165, 49);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -61,7 +61,7 @@ namespace InversionesJK.UI
             this.btnCancelar.Font = new System.Drawing.Font("Arial", 9.75F);
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCancelar.Location = new System.Drawing.Point(209, 376);
+            this.btnCancelar.Location = new System.Drawing.Point(128, 326);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(83, 23);
             this.btnCancelar.TabIndex = 85;
@@ -74,7 +74,7 @@ namespace InversionesJK.UI
             this.btnAceptar.Font = new System.Drawing.Font("Arial", 9.75F);
             this.btnAceptar.Image = ((System.Drawing.Image)(resources.GetObject("btnAceptar.Image")));
             this.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAceptar.Location = new System.Drawing.Point(93, 376);
+            this.btnAceptar.Location = new System.Drawing.Point(12, 326);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(79, 23);
             this.btnAceptar.TabIndex = 84;
@@ -92,12 +92,36 @@ namespace InversionesJK.UI
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txt_nombre_maquina);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Location = new System.Drawing.Point(59, 70);
+            this.groupBox1.Location = new System.Drawing.Point(34, 70);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(257, 244);
+            this.groupBox1.Size = new System.Drawing.Size(152, 244);
             this.groupBox1.TabIndex = 83;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos de Maquina";
+            // 
+            // dtp_fecha_maq
+            // 
+            this.dtp_fecha_maq.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtp_fecha_maq.Location = new System.Drawing.Point(17, 150);
+            this.dtp_fecha_maq.Name = "dtp_fecha_maq";
+            this.dtp_fecha_maq.Size = new System.Drawing.Size(100, 20);
+            this.dtp_fecha_maq.TabIndex = 28;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(17, 188);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(55, 13);
+            this.label1.TabIndex = 27;
+            this.label1.Text = "Ubicación";
+            // 
+            // txt_ubicacion_maq
+            // 
+            this.txt_ubicacion_maq.Location = new System.Drawing.Point(17, 204);
+            this.txt_ubicacion_maq.Name = "txt_ubicacion_maq";
+            this.txt_ubicacion_maq.Size = new System.Drawing.Size(100, 20);
+            this.txt_ubicacion_maq.TabIndex = 26;
             // 
             // label2
             // 
@@ -141,35 +165,11 @@ namespace InversionesJK.UI
             this.label5.TabIndex = 16;
             this.label5.Text = "Fecha";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 188);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 13);
-            this.label1.TabIndex = 27;
-            this.label1.Text = "Ubicación";
-            // 
-            // txt_ubicacion_maq
-            // 
-            this.txt_ubicacion_maq.Location = new System.Drawing.Point(17, 204);
-            this.txt_ubicacion_maq.Name = "txt_ubicacion_maq";
-            this.txt_ubicacion_maq.Size = new System.Drawing.Size(100, 20);
-            this.txt_ubicacion_maq.TabIndex = 26;
-            // 
-            // dtp_fecha_maq
-            // 
-            this.dtp_fecha_maq.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_fecha_maq.Location = new System.Drawing.Point(17, 150);
-            this.dtp_fecha_maq.Name = "dtp_fecha_maq";
-            this.dtp_fecha_maq.Size = new System.Drawing.Size(100, 20);
-            this.dtp_fecha_maq.TabIndex = 28;
-            // 
             // AgregarMaquinas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(387, 417);
+            this.ClientSize = new System.Drawing.Size(230, 361);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);

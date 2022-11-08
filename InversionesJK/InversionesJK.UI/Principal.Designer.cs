@@ -92,14 +92,14 @@ namespace InversionesJK.UI
             // reingresarToolStripMenuItem
             // 
             this.reingresarToolStripMenuItem.Name = "reingresarToolStripMenuItem";
-            this.reingresarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.reingresarToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.reingresarToolStripMenuItem.Text = "Reingresar";
             this.reingresarToolStripMenuItem.Click += new System.EventHandler(this.reingresarToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -138,14 +138,14 @@ namespace InversionesJK.UI
             // agregarToolStripMenuItem1
             // 
             this.agregarToolStripMenuItem1.Name = "agregarToolStripMenuItem1";
-            this.agregarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.agregarToolStripMenuItem1.Size = new System.Drawing.Size(116, 22);
             this.agregarToolStripMenuItem1.Text = "Agregar";
             this.agregarToolStripMenuItem1.Click += new System.EventHandler(this.agregarToolStripMenuItem1_Click);
             // 
             // mostrarToolStripMenuItem1
             // 
             this.mostrarToolStripMenuItem1.Name = "mostrarToolStripMenuItem1";
-            this.mostrarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.mostrarToolStripMenuItem1.Size = new System.Drawing.Size(116, 22);
             this.mostrarToolStripMenuItem1.Text = "Mostrar";
             this.mostrarToolStripMenuItem1.Click += new System.EventHandler(this.mostrarToolStripMenuItem1_Click);
             // 
@@ -161,14 +161,14 @@ namespace InversionesJK.UI
             // agregarToolStripMenuItem2
             // 
             this.agregarToolStripMenuItem2.Name = "agregarToolStripMenuItem2";
-            this.agregarToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.agregarToolStripMenuItem2.Size = new System.Drawing.Size(116, 22);
             this.agregarToolStripMenuItem2.Text = "Agregar";
             this.agregarToolStripMenuItem2.Click += new System.EventHandler(this.agregarToolStripMenuItem2_Click);
             // 
             // mostrarToolStripMenuItem2
             // 
             this.mostrarToolStripMenuItem2.Name = "mostrarToolStripMenuItem2";
-            this.mostrarToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.mostrarToolStripMenuItem2.Size = new System.Drawing.Size(116, 22);
             this.mostrarToolStripMenuItem2.Text = "Mostrar";
             this.mostrarToolStripMenuItem2.Click += new System.EventHandler(this.mostrarToolStripMenuItem2_Click);
             // 
@@ -184,14 +184,14 @@ namespace InversionesJK.UI
             // agregarToolStripMenuItem3
             // 
             this.agregarToolStripMenuItem3.Name = "agregarToolStripMenuItem3";
-            this.agregarToolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
+            this.agregarToolStripMenuItem3.Size = new System.Drawing.Size(116, 22);
             this.agregarToolStripMenuItem3.Text = "Agregar";
             this.agregarToolStripMenuItem3.Click += new System.EventHandler(this.agregarToolStripMenuItem3_Click);
             // 
             // mostrarToolStripMenuItem3
             // 
             this.mostrarToolStripMenuItem3.Name = "mostrarToolStripMenuItem3";
-            this.mostrarToolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
+            this.mostrarToolStripMenuItem3.Size = new System.Drawing.Size(116, 22);
             this.mostrarToolStripMenuItem3.Text = "Mostrar";
             this.mostrarToolStripMenuItem3.Click += new System.EventHandler(this.mostrarToolStripMenuItem3_Click);
             // 
@@ -207,14 +207,14 @@ namespace InversionesJK.UI
             // agregarToolStripMenuItem4
             // 
             this.agregarToolStripMenuItem4.Name = "agregarToolStripMenuItem4";
-            this.agregarToolStripMenuItem4.Size = new System.Drawing.Size(180, 22);
+            this.agregarToolStripMenuItem4.Size = new System.Drawing.Size(116, 22);
             this.agregarToolStripMenuItem4.Text = "Agregar";
             this.agregarToolStripMenuItem4.Click += new System.EventHandler(this.agregarToolStripMenuItem4_Click);
             // 
             // mostrarToolStripMenuItem4
             // 
             this.mostrarToolStripMenuItem4.Name = "mostrarToolStripMenuItem4";
-            this.mostrarToolStripMenuItem4.Size = new System.Drawing.Size(180, 22);
+            this.mostrarToolStripMenuItem4.Size = new System.Drawing.Size(116, 22);
             this.mostrarToolStripMenuItem4.Text = "Mostrar";
             this.mostrarToolStripMenuItem4.Click += new System.EventHandler(this.mostrarToolStripMenuItem4_Click);
             // 
@@ -305,6 +305,7 @@ namespace InversionesJK.UI
             this.Name = "Principal";
             this.Text = "Principal";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Principal_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);

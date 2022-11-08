@@ -130,18 +130,18 @@ namespace InversionesJK.UI
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(6, 29);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 13);
+            this.label1.Size = new System.Drawing.Size(50, 13);
             this.label1.TabIndex = 35;
-            this.label1.Text = "ID de la Maquina";
+            this.label1.Text = " Id del rol";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(6, 86);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(44, 13);
+            this.label3.Size = new System.Drawing.Size(75, 13);
             this.label3.TabIndex = 45;
-            this.label3.Text = "Nombre";
+            this.label3.Text = "Nombre del rol";
             // 
             // btn_buscar
             // 

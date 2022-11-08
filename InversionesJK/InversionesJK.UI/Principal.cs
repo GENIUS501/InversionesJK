@@ -31,7 +31,7 @@ namespace InversionesJK.UI
         private ReporteVentas addReportSales;
         private ReporteLoteria addReportLotteries;
 
-        private AcercaDe addAbout;
+        //private AcercaDe addAbout;
         private Ayuda addHelp;
 
         public Principal()
@@ -41,118 +41,248 @@ namespace InversionesJK.UI
 
         private void agregarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            addUsers = new AgregarUsuarios();
-            addUsers.MdiParent = this;
-            addUsers.Show();
+            try
+            {
+                addUsers = new AgregarUsuarios();
+                addUsers.MdiParent = this;
+                addUsers.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void mostrarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            showUsers = new MostrarUsuarios();
-            showUsers.MdiParent = this;
-            showUsers.Show();
+            try
+            {
+                showUsers = new MostrarUsuarios();
+                showUsers.MdiParent = this;
+                showUsers.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
 
         private void agregarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            addRols = new AgregarRolesyPermisos();
-            addRols.MdiParent = this;
-            addRols.Show();
+            try
+            {
+                addRols = new AgregarRolesyPermisos();
+                addRols.MdiParent = this;
+                addRols.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void mostrarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            showRols = new MostrarRolesyPermisos();
-            showRols.MdiParent = this;
-            showRols.Show();
+            try
+            {
+                showRols = new MostrarRolesyPermisos();
+                showRols.MdiParent = this;
+                showRols.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void agregarToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            addLotteries = new AgregarLoterias();
-            addLotteries.MdiParent = this;
-            addLotteries.Show();
+            try
+            {
+                addLotteries = new AgregarLoterias();
+                addLotteries.MdiParent = this;
+                addLotteries.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void mostrarToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            showLotteries = new MostrarLoterias();
-            showLotteries.MdiParent = this;
-            showLotteries.Show();
+            try
+            {
+                showLotteries = new MostrarLoterias();
+                showLotteries.MdiParent = this;
+                showLotteries.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void agregarToolStripMenuItem3_Click(object sender, EventArgs e)
         {
-            addMachines = new AgregarMaquinas();
-            addMachines.MdiParent = this;
-            addMachines.Show();
+            try
+            {
+                addMachines = new AgregarMaquinas();
+                addMachines.MdiParent = this;
+                addMachines.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void mostrarToolStripMenuItem3_Click(object sender, EventArgs e)
         {
-            showMachines = new MostrarMaquinas();
-            showMachines.MdiParent = this;
-            showMachines.Show();
+            try
+            {
+                showMachines = new MostrarMaquinas();
+                showMachines.MdiParent = this;
+                showMachines.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void agregarToolStripMenuItem4_Click(object sender, EventArgs e)
         {
-            addSales = new AgregarVentas();
-            addSales.MdiParent = this;
-            addSales.Show();
+            try
+            {
+                addSales = new AgregarVentas();
+                addSales.MdiParent = this;
+                addSales.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void mostrarToolStripMenuItem4_Click(object sender, EventArgs e)
         {
-            showSales = new MostrarVentas();
-            showSales.MdiParent = this;
-            showSales.Show();
+            try
+            {
+                showSales = new MostrarVentas();
+                showSales.MdiParent = this;
+                showSales.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void maquinasToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            addReportMachines = new ReporteMaquinas();
-            addReportMachines.MdiParent = this;
-            addReportMachines.Show();
+            try
+            {
+                addReportMachines = new ReporteMaquinas();
+                addReportMachines.MdiParent = this;
+                addReportMachines.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void ventasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            addReportSales = new ReporteVentas();
-            addReportSales.MdiParent = this;
-            addReportSales.Show();
+            try
+            {
+                addReportSales = new ReporteVentas();
+                addReportSales.MdiParent = this;
+                addReportSales.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void loteriasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            addReportLotteries = new ReporteLoteria();
-            addReportLotteries.MdiParent = this;
-            addReportLotteries.Show();
+            try
+            {
+                addReportLotteries = new ReporteLoteria();
+                addReportLotteries.MdiParent = this;
+                addReportLotteries.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            addAbout = new AcercaDe();
-            addAbout.MdiParent = this;
-            addAbout.Show();
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void ayudaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            addHelp = new Ayuda();
-            addHelp.MdiParent = this;
-            addHelp.Show();
+            try
+            {
+                addHelp = new Ayuda();
+                addHelp.MdiParent = this;
+                addHelp.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void reingresarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Application.Restart();
+            try
+            {
+                Application.Restart();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            try
+            {
+                Application.Exit();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Exit();
+            }
+        }
+
+        private void Principal_Load(object sender, EventArgs e)
+        {
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
