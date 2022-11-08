@@ -47,7 +47,7 @@ namespace InversionesJK.UI
             this.btnCancelar.Font = new System.Drawing.Font("Arial", 9.75F);
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCancelar.Location = new System.Drawing.Point(223, 371);
+            this.btnCancelar.Location = new System.Drawing.Point(155, 249);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(83, 23);
             this.btnCancelar.TabIndex = 16;
@@ -60,7 +60,7 @@ namespace InversionesJK.UI
             this.btnAceptar.Font = new System.Drawing.Font("Arial", 9.75F);
             this.btnAceptar.Image = ((System.Drawing.Image)(resources.GetObject("btnAceptar.Image")));
             this.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAceptar.Location = new System.Drawing.Point(107, 371);
+            this.btnAceptar.Location = new System.Drawing.Point(11, 249);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(79, 23);
             this.btnAceptar.TabIndex = 15;
@@ -107,9 +107,9 @@ namespace InversionesJK.UI
             this.groupBox1.Controls.Add(this.txt_codigo_loteria);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txt_nombre_loteria);
-            this.groupBox1.Location = new System.Drawing.Point(76, 80);
+            this.groupBox1.Location = new System.Drawing.Point(41, 80);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(246, 274);
+            this.groupBox1.Size = new System.Drawing.Size(170, 150);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos de Loteria";
@@ -117,7 +117,7 @@ namespace InversionesJK.UI
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(112, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(46, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(165, 49);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -128,7 +128,7 @@ namespace InversionesJK.UI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(387, 417);
+            this.ClientSize = new System.Drawing.Size(250, 296);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
