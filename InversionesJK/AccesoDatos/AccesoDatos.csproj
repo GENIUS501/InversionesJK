@@ -63,6 +63,8 @@
     <Compile Include="DBitacora_movimientos.cs" />
     <Compile Include="DLoterias.cs" />
     <Compile Include="DMaquinas.cs" />
+    <Compile Include="DPermisos.cs" />
+    <Compile Include="DRoles.cs" />
     <Compile Include="InversionesJK.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

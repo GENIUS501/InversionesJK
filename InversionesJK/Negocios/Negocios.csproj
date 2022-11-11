@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="NLoterias.cs" />
     <Compile Include="NMaquinas.cs" />
+    <Compile Include="NRoles.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -44,6 +44,8 @@
     <Compile Include="EBitacora_movimientos.cs" />
     <Compile Include="ELoterias.cs" />
     <Compile Include="EMaquinas.cs" />
+    <Compile Include="EPermisos.cs" />
+    <Compile Include="ERoles.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
