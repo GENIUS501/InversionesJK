@@ -656,6 +656,7 @@ namespace InversionesJK.UI
                             ERoles Rol = new ERoles();
                             Int32 FilasAfectadas = 0;
                             Rol.Nombre_rol = this.txt_nombre_perfil.Text;
+                            Rol.Detalle_rol = this.txt_nombre_perfil.Text;
                             if (Accion == "A")
                             {
                                 FilasAfectadas = Negocios.Agregar(Rol, Usuario);

@@ -73,6 +73,8 @@ namespace InversionesJK.UI
             try
             {
                 addRols = new AgregarRolesyPermisos();
+                addRols.Accion = "A";
+                addRols.Usuario = 1;
                 addRols.MdiParent = this;
                 addRols.Show();
             }
