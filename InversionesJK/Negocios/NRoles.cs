@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Negocios
 {
-    public class NRol
+    public class NRoles
     {
         #region Agregar
         public int Agregar(ERoles obj, int Usuario)

@@ -29,6 +29,7 @@ namespace InversionesJK.UI
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgregarRolesyPermisos));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txt_nombre_perfil = new System.Windows.Forms.TextBox();
@@ -42,8 +43,11 @@ namespace InversionesJK.UI
             this.chb_bit_sesiones = new System.Windows.Forms.CheckBox();
             this.chb_ventas_reporte = new System.Windows.Forms.CheckBox();
             this.chb_bit_movimientos = new System.Windows.Forms.CheckBox();
-            this.chb_ayuda = new System.Windows.Forms.CheckBox();
-            this.chb_acerca_de = new System.Windows.Forms.CheckBox();
+            this.grp_usuarios = new System.Windows.Forms.GroupBox();
+            this.chk_usuarios_consultar = new System.Windows.Forms.CheckBox();
+            this.chk_usuarios_eliminar = new System.Windows.Forms.CheckBox();
+            this.chk_usuarios_modificar = new System.Windows.Forms.CheckBox();
+            this.chk_usuarios_agregar = new System.Windows.Forms.CheckBox();
             this.chb_ventas = new System.Windows.Forms.CheckBox();
             this.chb_maquinas = new System.Windows.Forms.CheckBox();
             this.chb_loterias = new System.Windows.Forms.CheckBox();
@@ -64,11 +68,6 @@ namespace InversionesJK.UI
             this.chk_loterias_eliminar = new System.Windows.Forms.CheckBox();
             this.chk_loterias_modificar = new System.Windows.Forms.CheckBox();
             this.chk_loterias_agregar = new System.Windows.Forms.CheckBox();
-            this.grp_usuarios = new System.Windows.Forms.GroupBox();
-            this.chk_usuarios_consultar = new System.Windows.Forms.CheckBox();
-            this.chk_usuarios_eliminar = new System.Windows.Forms.CheckBox();
-            this.chk_usuarios_modificar = new System.Windows.Forms.CheckBox();
-            this.chk_usuarios_agregar = new System.Windows.Forms.CheckBox();
             this.grp_roles = new System.Windows.Forms.GroupBox();
             this.chk_rol_consultar = new System.Windows.Forms.CheckBox();
             this.chk_rol_eliminar = new System.Windows.Forms.CheckBox();
@@ -77,15 +76,17 @@ namespace InversionesJK.UI
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            this.grp_usuarios.SuspendLayout();
             this.grp_ventas.SuspendLayout();
             this.grp_maquinas.SuspendLayout();
             this.grp_loterias.SuspendLayout();
-            this.grp_usuarios.SuspendLayout();
             this.grp_roles.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -136,8 +137,6 @@ namespace InversionesJK.UI
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.groupBox5);
-            this.groupBox2.Controls.Add(this.chb_ayuda);
-            this.groupBox2.Controls.Add(this.chb_acerca_de);
             this.groupBox2.Controls.Add(this.grp_usuarios);
             this.groupBox2.Controls.Add(this.chb_ventas);
             this.groupBox2.Controls.Add(this.chb_maquinas);
@@ -219,25 +218,59 @@ namespace InversionesJK.UI
             this.chb_bit_movimientos.Text = "Bitacora de movimientos";
             this.chb_bit_movimientos.UseVisualStyleBackColor = true;
             // 
-            // chb_ayuda
+            // grp_usuarios
             // 
-            this.chb_ayuda.AutoSize = true;
-            this.chb_ayuda.Location = new System.Drawing.Point(242, 229);
-            this.chb_ayuda.Name = "chb_ayuda";
-            this.chb_ayuda.Size = new System.Drawing.Size(56, 17);
-            this.chb_ayuda.TabIndex = 9;
-            this.chb_ayuda.Text = "Ayuda";
-            this.chb_ayuda.UseVisualStyleBackColor = true;
+            this.grp_usuarios.Controls.Add(this.chk_usuarios_consultar);
+            this.grp_usuarios.Controls.Add(this.chk_usuarios_eliminar);
+            this.grp_usuarios.Controls.Add(this.chk_usuarios_modificar);
+            this.grp_usuarios.Controls.Add(this.chk_usuarios_agregar);
+            this.grp_usuarios.Enabled = false;
+            this.grp_usuarios.Location = new System.Drawing.Point(9, 59);
+            this.grp_usuarios.Name = "grp_usuarios";
+            this.grp_usuarios.Size = new System.Drawing.Size(97, 110);
+            this.grp_usuarios.TabIndex = 3;
+            this.grp_usuarios.TabStop = false;
+            this.grp_usuarios.Text = "Permisos";
             // 
-            // chb_acerca_de
+            // chk_usuarios_consultar
             // 
-            this.chb_acerca_de.AutoSize = true;
-            this.chb_acerca_de.Location = new System.Drawing.Point(242, 206);
-            this.chb_acerca_de.Name = "chb_acerca_de";
-            this.chb_acerca_de.Size = new System.Drawing.Size(75, 17);
-            this.chb_acerca_de.TabIndex = 8;
-            this.chb_acerca_de.Text = "Acerca de";
-            this.chb_acerca_de.UseVisualStyleBackColor = true;
+            this.chk_usuarios_consultar.AutoSize = true;
+            this.chk_usuarios_consultar.Location = new System.Drawing.Point(6, 90);
+            this.chk_usuarios_consultar.Name = "chk_usuarios_consultar";
+            this.chk_usuarios_consultar.Size = new System.Drawing.Size(70, 17);
+            this.chk_usuarios_consultar.TabIndex = 17;
+            this.chk_usuarios_consultar.Text = "Consultar";
+            this.chk_usuarios_consultar.UseVisualStyleBackColor = true;
+            // 
+            // chk_usuarios_eliminar
+            // 
+            this.chk_usuarios_eliminar.AutoSize = true;
+            this.chk_usuarios_eliminar.Location = new System.Drawing.Point(7, 67);
+            this.chk_usuarios_eliminar.Name = "chk_usuarios_eliminar";
+            this.chk_usuarios_eliminar.Size = new System.Drawing.Size(62, 17);
+            this.chk_usuarios_eliminar.TabIndex = 16;
+            this.chk_usuarios_eliminar.Text = "Eliminar";
+            this.chk_usuarios_eliminar.UseVisualStyleBackColor = true;
+            // 
+            // chk_usuarios_modificar
+            // 
+            this.chk_usuarios_modificar.AutoSize = true;
+            this.chk_usuarios_modificar.Location = new System.Drawing.Point(7, 43);
+            this.chk_usuarios_modificar.Name = "chk_usuarios_modificar";
+            this.chk_usuarios_modificar.Size = new System.Drawing.Size(69, 17);
+            this.chk_usuarios_modificar.TabIndex = 15;
+            this.chk_usuarios_modificar.Text = "Modificar";
+            this.chk_usuarios_modificar.UseVisualStyleBackColor = true;
+            // 
+            // chk_usuarios_agregar
+            // 
+            this.chk_usuarios_agregar.AutoSize = true;
+            this.chk_usuarios_agregar.Location = new System.Drawing.Point(6, 19);
+            this.chk_usuarios_agregar.Name = "chk_usuarios_agregar";
+            this.chk_usuarios_agregar.Size = new System.Drawing.Size(63, 17);
+            this.chk_usuarios_agregar.TabIndex = 14;
+            this.chk_usuarios_agregar.Text = "Agregar";
+            this.chk_usuarios_agregar.UseVisualStyleBackColor = true;
             // 
             // chb_ventas
             // 
@@ -248,6 +281,7 @@ namespace InversionesJK.UI
             this.chb_ventas.TabIndex = 6;
             this.chb_ventas.Text = "Ventas";
             this.chb_ventas.UseVisualStyleBackColor = true;
+            this.chb_ventas.CheckedChanged += new System.EventHandler(this.chb_ventas_CheckedChanged);
             // 
             // chb_maquinas
             // 
@@ -258,6 +292,7 @@ namespace InversionesJK.UI
             this.chb_maquinas.TabIndex = 6;
             this.chb_maquinas.Text = "Maquinas";
             this.chb_maquinas.UseVisualStyleBackColor = true;
+            this.chb_maquinas.CheckedChanged += new System.EventHandler(this.chb_maquinas_CheckedChanged);
             // 
             // chb_loterias
             // 
@@ -268,6 +303,7 @@ namespace InversionesJK.UI
             this.chb_loterias.TabIndex = 4;
             this.chb_loterias.Text = "Loterias";
             this.chb_loterias.UseVisualStyleBackColor = true;
+            this.chb_loterias.CheckedChanged += new System.EventHandler(this.chb_loterias_CheckedChanged);
             // 
             // chb_usuarios
             // 
@@ -278,6 +314,7 @@ namespace InversionesJK.UI
             this.chb_usuarios.TabIndex = 3;
             this.chb_usuarios.Text = "Usuarios";
             this.chb_usuarios.UseVisualStyleBackColor = true;
+            this.chb_usuarios.CheckedChanged += new System.EventHandler(this.chb_usuarios_CheckedChanged);
             // 
             // chb_rol
             // 
@@ -288,6 +325,7 @@ namespace InversionesJK.UI
             this.chb_rol.TabIndex = 2;
             this.chb_rol.Text = "Roles";
             this.chb_rol.UseVisualStyleBackColor = true;
+            this.chb_rol.CheckedChanged += new System.EventHandler(this.chb_rol_CheckedChanged);
             // 
             // grp_ventas
             // 
@@ -451,60 +489,6 @@ namespace InversionesJK.UI
             this.chk_loterias_agregar.Text = "Agregar";
             this.chk_loterias_agregar.UseVisualStyleBackColor = true;
             // 
-            // grp_usuarios
-            // 
-            this.grp_usuarios.Controls.Add(this.chk_usuarios_consultar);
-            this.grp_usuarios.Controls.Add(this.chk_usuarios_eliminar);
-            this.grp_usuarios.Controls.Add(this.chk_usuarios_modificar);
-            this.grp_usuarios.Controls.Add(this.chk_usuarios_agregar);
-            this.grp_usuarios.Enabled = false;
-            this.grp_usuarios.Location = new System.Drawing.Point(9, 59);
-            this.grp_usuarios.Name = "grp_usuarios";
-            this.grp_usuarios.Size = new System.Drawing.Size(97, 110);
-            this.grp_usuarios.TabIndex = 3;
-            this.grp_usuarios.TabStop = false;
-            this.grp_usuarios.Text = "Permisos";
-            // 
-            // chk_usuarios_consultar
-            // 
-            this.chk_usuarios_consultar.AutoSize = true;
-            this.chk_usuarios_consultar.Location = new System.Drawing.Point(6, 90);
-            this.chk_usuarios_consultar.Name = "chk_usuarios_consultar";
-            this.chk_usuarios_consultar.Size = new System.Drawing.Size(70, 17);
-            this.chk_usuarios_consultar.TabIndex = 17;
-            this.chk_usuarios_consultar.Text = "Consultar";
-            this.chk_usuarios_consultar.UseVisualStyleBackColor = true;
-            // 
-            // chk_usuarios_eliminar
-            // 
-            this.chk_usuarios_eliminar.AutoSize = true;
-            this.chk_usuarios_eliminar.Location = new System.Drawing.Point(7, 67);
-            this.chk_usuarios_eliminar.Name = "chk_usuarios_eliminar";
-            this.chk_usuarios_eliminar.Size = new System.Drawing.Size(62, 17);
-            this.chk_usuarios_eliminar.TabIndex = 16;
-            this.chk_usuarios_eliminar.Text = "Eliminar";
-            this.chk_usuarios_eliminar.UseVisualStyleBackColor = true;
-            // 
-            // chk_usuarios_modificar
-            // 
-            this.chk_usuarios_modificar.AutoSize = true;
-            this.chk_usuarios_modificar.Location = new System.Drawing.Point(7, 43);
-            this.chk_usuarios_modificar.Name = "chk_usuarios_modificar";
-            this.chk_usuarios_modificar.Size = new System.Drawing.Size(69, 17);
-            this.chk_usuarios_modificar.TabIndex = 15;
-            this.chk_usuarios_modificar.Text = "Modificar";
-            this.chk_usuarios_modificar.UseVisualStyleBackColor = true;
-            // 
-            // chk_usuarios_agregar
-            // 
-            this.chk_usuarios_agregar.AutoSize = true;
-            this.chk_usuarios_agregar.Location = new System.Drawing.Point(6, 19);
-            this.chk_usuarios_agregar.Name = "chk_usuarios_agregar";
-            this.chk_usuarios_agregar.Size = new System.Drawing.Size(63, 17);
-            this.chk_usuarios_agregar.TabIndex = 14;
-            this.chk_usuarios_agregar.Text = "Agregar";
-            this.chk_usuarios_agregar.UseVisualStyleBackColor = true;
-            // 
             // grp_roles
             // 
             this.grp_roles.Controls.Add(this.chk_rol_consultar);
@@ -571,6 +555,7 @@ namespace InversionesJK.UI
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAceptar
             // 
@@ -584,6 +569,7 @@ namespace InversionesJK.UI
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // pictureBox1
             // 
@@ -594,6 +580,10 @@ namespace InversionesJK.UI
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 82;
             this.pictureBox1.TabStop = false;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // AgregarRolesyPermisos
             // 
@@ -607,23 +597,25 @@ namespace InversionesJK.UI
             this.Controls.Add(this.groupBox1);
             this.Name = "AgregarRolesyPermisos";
             this.Text = "Agregar Roles y Permisos";
+            this.Load += new System.EventHandler(this.AgregarRolesyPermisos_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            this.grp_usuarios.ResumeLayout(false);
+            this.grp_usuarios.PerformLayout();
             this.grp_ventas.ResumeLayout(false);
             this.grp_ventas.PerformLayout();
             this.grp_maquinas.ResumeLayout(false);
             this.grp_maquinas.PerformLayout();
             this.grp_loterias.ResumeLayout(false);
             this.grp_loterias.PerformLayout();
-            this.grp_usuarios.ResumeLayout(false);
-            this.grp_usuarios.PerformLayout();
             this.grp_roles.ResumeLayout(false);
             this.grp_roles.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -642,8 +634,6 @@ namespace InversionesJK.UI
         private System.Windows.Forms.CheckBox chb_bit_sesiones;
         private System.Windows.Forms.CheckBox chb_ventas_reporte;
         private System.Windows.Forms.CheckBox chb_bit_movimientos;
-        private System.Windows.Forms.CheckBox chb_ayuda;
-        private System.Windows.Forms.CheckBox chb_acerca_de;
         private System.Windows.Forms.CheckBox chb_ventas;
         private System.Windows.Forms.CheckBox chb_maquinas;
         private System.Windows.Forms.CheckBox chb_loterias;
@@ -677,5 +667,6 @@ namespace InversionesJK.UI
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
