@@ -89,6 +89,8 @@ namespace InversionesJK.UI
             try
             {
                 showRols = new MostrarRolesyPermisos();
+                showRols.Usuario = 1;
+                showRols.Id_Rol = 1;
                 showRols.MdiParent = this;
                 showRols.Show();
             }
