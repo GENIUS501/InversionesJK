@@ -22,20 +22,14 @@ namespace AccesoDatos
                 using (TransactionScope Ts = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled))
                 {
                     Usuarios Objbd = new Usuarios();
-                    Objbd.Id_Usuario = obj.Id_Usuario;
                     Objbd.Cedula = obj.Cedula;
                     Objbd.Usuario = obj.Usuario;
                     Objbd.Clave = obj.Clave;
                     Objbd.Nombre = obj.Nombre;
-                    Objbd.Correo = "";
+                    Objbd.Correo = obj.Correo;
                     Objbd.Id_Rol = obj.Id_Rol;
                     db.Entry(Objbd).State = EntityState.Added;
-                    //db.Tab_Usuarios.Add(Objbd);
-
-                    db.SaveChanges();
-
-                    int Resultado = Objbd.Id_Usuario;
-
+                    int Resultado = db.SaveChanges();
                     if (Resultado > 0)
                     {
                         Ts.Complete();

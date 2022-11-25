@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="191b7e043b53450e8a7475d1a0c8551b" Name="Diagram1">
+      <Diagram DiagramId="e7632dd9b9504b87be56a9c0f0839d01" Name="Diagram1">
         <EntityTypeShape EntityType="InversionesJKModel.Bitacora_ingreso_salida" Width="1.5" PointX="5.25" PointY="6.125" IsExpanded="true" />
         <EntityTypeShape EntityType="InversionesJKModel.Bitacora_movimientos" Width="1.5" PointX="5.25" PointY="8.875" IsExpanded="true" />
         <EntityTypeShape EntityType="InversionesJKModel.Loterias" Width="1.5" PointX="6" PointY="3.5" IsExpanded="true" />

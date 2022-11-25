@@ -23,7 +23,7 @@ namespace AccesoDatos
         }
     
         public int Id_Usuario { get; set; }
-        public int Cedula { get; set; }
+        public string Cedula { get; set; }
         public string Usuario { get; set; }
         public string Nombre { get; set; }
         public string Correo { get; set; }

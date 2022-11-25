@@ -103,15 +103,12 @@ namespace InversionesJK.UI
             // 
             // cbo_rol
             // 
-            this.cbo_rol.DataSource = this.rolesBindingSource;
-            this.cbo_rol.DisplayMember = "Nombre_rol";
             this.cbo_rol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_rol.FormattingEnabled = true;
             this.cbo_rol.Location = new System.Drawing.Point(9, 169);
             this.cbo_rol.Name = "cbo_rol";
             this.cbo_rol.Size = new System.Drawing.Size(233, 21);
             this.cbo_rol.TabIndex = 6;
-            this.cbo_rol.ValueMember = "IdRol";
             // 
             // txt_cclave
             // 
@@ -199,6 +196,7 @@ namespace InversionesJK.UI
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAceptar
             // 

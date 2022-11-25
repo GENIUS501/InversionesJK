@@ -40,13 +40,22 @@ namespace InversionesJK.UI
         {
             try
             {
-                // TODO: esta línea de código carga datos en la tabla 'inversionesJKDataSet.Roles' Puede moverla o quitarla según sea necesario.
-                this.rolesTableAdapter.Fill(this.inversionesJKDataSet.Roles);
+                NRoles NegociosRoles = new NRoles();
+                this.cbo_rol.DisplayMember = "Text";
+                this.cbo_rol.ValueMember = "Value";
+                
+                var RolesDataSource = NegociosRoles.Mostrar().Select(x=> new
+                    {
+                        Text=x.Nombre_rol,
+                        Value = x.Id_Rol
+                    }
+                );
+                this.cbo_rol.DataSource = RolesDataSource.ToArray();
                 if (Accion == "M" || Accion == "C")
                 {
                     this.txt_cclave.Visible = false;
                     this.lbl_cclave.Visible = false;
-                    //llenar();
+                    llenar();
                     if (Accion == "C")
                     {
                         this.groupBox1.Enabled = false;
@@ -165,9 +174,10 @@ namespace InversionesJK.UI
                     {
                         NUsuarios Negocios = new NUsuarios();
                         EUsuarios Obj = new EUsuarios();
-                        Obj.Cedula = int.Parse(this.txt_cedula.Text);
+                        Obj.Cedula = this.txt_cedula.Text;
                         Obj.Usuario = this.txt_user.Text;
                         Obj.Nombre = this.txt_nombre.Text;
+                        var d= this.cbo_rol.SelectedValue;
                         Obj.Id_Rol = int.Parse(this.cbo_rol.SelectedValue.ToString());
                         Obj.Correo = this.txt_correo.Text;
                         Obj.Nombre = this.txt_nombre.Text;
@@ -206,9 +216,9 @@ namespace InversionesJK.UI
                             MessageBox.Show("Usuario modificado exitosamente!!!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             this.Close();
                         }
-                        else
+                        if (Accion == "C")
                         {
-                            MessageBox.Show("Error al modificar el Usuario!!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            this.Close();
                         }
                     }
                     #endregion
@@ -220,5 +230,17 @@ namespace InversionesJK.UI
                 MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

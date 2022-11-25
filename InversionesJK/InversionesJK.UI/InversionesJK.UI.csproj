@@ -115,6 +115,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>InversionesJKDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ListItem.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>

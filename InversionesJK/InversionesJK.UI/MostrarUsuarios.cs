@@ -89,8 +89,7 @@ namespace InversionesJK.UI
                     if (dr == DialogResult.Yes)
                     {
                         Int32 FilasAfectadas = 0;
-                        NRoles Negocios = new NRoles();
-                        Negocios.AgregarPermisos(new List<Entidades.EPermisos>(), valorcelda);
+                        NUsuarios Negocios = new NUsuarios();
                         FilasAfectadas = Negocios.Eliminar(valorcelda, Usuario);
                         if (FilasAfectadas > 0)
                         {
@@ -161,7 +160,7 @@ namespace InversionesJK.UI
                 if (Accion != "A" && Accion == "M" && valorcelda != -1 || Accion != "A" && Accion == "E" && valorcelda != -1 || Accion != "A" && Accion == "C" && valorcelda != -1)
                 {
                     //valorcelda = dat_usuarios.CurrentRow.Index;
-                    AgregarRolesyPermisos frm = new AgregarRolesyPermisos();
+                    AgregarUsuarios frm = new AgregarUsuarios();
                     frm.Accion = Accion;
                     frm.Id = valorcelda;
                     frm.Usuario = Usuario;
@@ -173,7 +172,7 @@ namespace InversionesJK.UI
                 {
                     if (Accion == "A")
                     {
-                        AgregarRolesyPermisos frm = new AgregarRolesyPermisos();
+                        AgregarUsuarios frm = new AgregarUsuarios();
                         frm.Accion = Accion;
                         frm.Id = valorcelda;
                         frm.Usuario = Usuario;
