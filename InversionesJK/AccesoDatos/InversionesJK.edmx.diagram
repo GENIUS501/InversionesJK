@@ -4,15 +4,14 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="0db495e2af95419a9f3d79ef7c902621" Name="Diagram1">
+      <Diagram DiagramId="191b7e043b53450e8a7475d1a0c8551b" Name="Diagram1">
         <EntityTypeShape EntityType="InversionesJKModel.Bitacora_ingreso_salida" Width="1.5" PointX="5.25" PointY="6.125" IsExpanded="true" />
         <EntityTypeShape EntityType="InversionesJKModel.Bitacora_movimientos" Width="1.5" PointX="5.25" PointY="8.875" IsExpanded="true" />
         <EntityTypeShape EntityType="InversionesJKModel.Loterias" Width="1.5" PointX="6" PointY="3.5" IsExpanded="true" />
         <EntityTypeShape EntityType="InversionesJKModel.Maquinas" Width="1.5" PointX="6" PointY="12.875" IsExpanded="true" />
         <EntityTypeShape EntityType="InversionesJKModel.Permisos" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
         <EntityTypeShape EntityType="InversionesJKModel.Roles" Width="1.5" PointX="0.75" PointY="6.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="InversionesJKModel.sysdiagrams" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="InversionesJKModel.Usuarios" Width="1.5" PointX="3" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="InversionesJKModel.Usuarios" Width="1.5" PointX="3" PointY="7.125" IsExpanded="true" />
         <EntityTypeShape EntityType="InversionesJKModel.Ventas" Width="1.5" PointX="8.25" PointY="7" IsExpanded="true" />
         <AssociationConnector Association="InversionesJKModel.Fk_Ingresos_Usuarios" ManuallyRouted="false" />
         <AssociationConnector Association="InversionesJKModel.Fk_Movimientos_Usuarios" ManuallyRouted="false" />

@@ -65,6 +65,7 @@
     <Compile Include="DMaquinas.cs" />
     <Compile Include="DPermisos.cs" />
     <Compile Include="DRoles.cs" />
+    <Compile Include="DUsuarios.cs" />
     <Compile Include="InversionesJK.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -93,9 +94,6 @@
     <Compile Include="Roles.cs">
       <DependentUpon>InversionesJK.tt</DependentUpon>
     </Compile>
-    <Compile Include="sysdiagrams.cs">
-      <DependentUpon>InversionesJK.tt</DependentUpon>
-    </Compile>
     <Compile Include="Usuarios.cs">
       <DependentUpon>InversionesJK.tt</DependentUpon>
     </Compile>
@@ -104,29 +102,15 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <EntityDeploy Include="InversionesJK.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>InversionesJK.Designer.cs</LastGenOutput>
     </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
     <None Include="InversionesJK.edmx.diagram">
       <DependentUpon>InversionesJK.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="InversionesJK.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>InversionesJK.Context.cs</LastGenOutput>
-      <DependentUpon>InversionesJK.edmx</DependentUpon>
-    </Content>
-    <Content Include="InversionesJK.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>InversionesJK.edmx</DependentUpon>
-      <LastGenOutput>InversionesJK.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -136,6 +120,18 @@
       <Project>{a95ce7a0-c184-4fe3-94e9-e1bf8963fc6c}</Project>
       <Name>Entidades</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="InversionesJK.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>InversionesJK.edmx</DependentUpon>
+      <LastGenOutput>InversionesJK.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="InversionesJK.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>InversionesJK.edmx</DependentUpon>
+      <LastGenOutput>InversionesJK.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

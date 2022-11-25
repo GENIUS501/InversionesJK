@@ -29,6 +29,7 @@ namespace InversionesJK.UI
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgregarUsuarios));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -46,12 +47,23 @@ namespace InversionesJK.UI
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.inversionesJKDataSet = new InversionesJK.UI.InversionesJKDataSet();
+            this.rolesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rolesTableAdapter = new InversionesJK.UI.InversionesJKDataSetTableAdapters.RolesTableAdapter();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label3 = new System.Windows.Forms.Label();
+            this.txt_correo = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inversionesJKDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.txt_correo);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.lbl_cclave);
             this.groupBox1.Controls.Add(this.cbo_rol);
@@ -91,7 +103,8 @@ namespace InversionesJK.UI
             // 
             // cbo_rol
             // 
-            this.cbo_rol.DisplayMember = "NombreRol";
+            this.cbo_rol.DataSource = this.rolesBindingSource;
+            this.cbo_rol.DisplayMember = "Nombre_rol";
             this.cbo_rol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_rol.FormattingEnabled = true;
             this.cbo_rol.Location = new System.Drawing.Point(9, 169);
@@ -199,6 +212,7 @@ namespace InversionesJK.UI
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // pictureBox1
             // 
@@ -210,20 +224,60 @@ namespace InversionesJK.UI
             this.pictureBox1.TabIndex = 82;
             this.pictureBox1.TabStop = false;
             // 
+            // inversionesJKDataSet
+            // 
+            this.inversionesJKDataSet.DataSetName = "InversionesJKDataSet";
+            this.inversionesJKDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // rolesBindingSource
+            // 
+            this.rolesBindingSource.DataMember = "Roles";
+            this.rolesBindingSource.DataSource = this.inversionesJKDataSet;
+            // 
+            // rolesTableAdapter
+            // 
+            this.rolesTableAdapter.ClearBeforeFill = true;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(129, 87);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(93, 13);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "Correo electronico";
+            // 
+            // txt_correo
+            // 
+            this.txt_correo.Location = new System.Drawing.Point(132, 102);
+            this.txt_correo.Name = "txt_correo";
+            this.txt_correo.Size = new System.Drawing.Size(110, 20);
+            this.txt_correo.TabIndex = 18;
+            // 
             // AgregarUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(387, 417);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
             this.Name = "AgregarUsuarios";
             this.Text = "Agregar Usuario";
+            this.Load += new System.EventHandler(this.AgregarUsuarios_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inversionesJKDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -246,5 +300,11 @@ namespace InversionesJK.UI
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private InversionesJKDataSet inversionesJKDataSet;
+        private System.Windows.Forms.BindingSource rolesBindingSource;
+        private InversionesJKDataSetTableAdapters.RolesTableAdapter rolesTableAdapter;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txt_correo;
     }
 }

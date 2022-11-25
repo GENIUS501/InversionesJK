@@ -86,7 +86,7 @@ namespace InversionesJK.UI
             {
                 if (valorcelda != -1)
                 {
-                    DialogResult dr = MessageBox.Show("Realmente desea eliminar el Cliente?", "Eliminar el Cliente", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    DialogResult dr = MessageBox.Show("Realmente desea eliminar el rol?", "Eliminar el rol", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (dr == DialogResult.Yes)
                     {
                         Int32 FilasAfectadas = 0;

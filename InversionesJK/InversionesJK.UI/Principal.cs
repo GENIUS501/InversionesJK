@@ -44,6 +44,8 @@ namespace InversionesJK.UI
             try
             {
                 addUsers = new AgregarUsuarios();
+                addUsers.Accion = "A";
+                addUsers.Usuario = 1;
                 addUsers.MdiParent = this;
                 addUsers.Show();
             }
