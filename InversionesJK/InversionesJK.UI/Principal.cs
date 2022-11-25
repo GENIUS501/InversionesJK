@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,9 @@ namespace InversionesJK.UI
 {
     public partial class Principal : Form
     {
+        public int Idsession { get; set; }
+        public EUsuarios UsuarioLogueado { get; set; }
+
         private AgregarUsuarios addUsers;
         private MostrarUsuarios showUsers;
 
@@ -45,7 +49,7 @@ namespace InversionesJK.UI
             {
                 addUsers = new AgregarUsuarios();
                 addUsers.Accion = "A";
-                addUsers.Usuario = 1;
+                addUsers.Usuario = UsuarioLogueado.Id_Usuario;
                 addUsers.MdiParent = this;
                 addUsers.Show();
             }
@@ -60,6 +64,8 @@ namespace InversionesJK.UI
             try
             {
                 showUsers = new MostrarUsuarios();
+                showUsers.Usuario = UsuarioLogueado.Id_Usuario;
+                showUsers.Id_Rol = UsuarioLogueado.Id_Rol;
                 showUsers.MdiParent = this;
                 showUsers.Show();
             }
@@ -76,7 +82,7 @@ namespace InversionesJK.UI
             {
                 addRols = new AgregarRolesyPermisos();
                 addRols.Accion = "A";
-                addRols.Usuario = 1;
+                addRols.Usuario = UsuarioLogueado.Id_Usuario;
                 addRols.MdiParent = this;
                 addRols.Show();
             }
@@ -91,8 +97,8 @@ namespace InversionesJK.UI
             try
             {
                 showRols = new MostrarRolesyPermisos();
-                showRols.Usuario = 1;
-                showRols.Id_Rol = 1;
+                showRols.Usuario = UsuarioLogueado.Id_Usuario;
+                showRols.Id_Rol = UsuarioLogueado.Id_Rol;
                 showRols.MdiParent = this;
                 showRols.Show();
             }
@@ -108,7 +114,7 @@ namespace InversionesJK.UI
             {
                 addLotteries = new AgregarLoterias();
                 addLotteries.Accion = "A";
-                addLotteries.Usuario = 1;
+                addLotteries.Usuario = UsuarioLogueado.Id_Usuario;
                 addLotteries.MdiParent = this;
                 addLotteries.Show();
             }
@@ -123,8 +129,8 @@ namespace InversionesJK.UI
             try
             {
                 showLotteries = new MostrarLoterias();
-                showLotteries.Usuario = 1;
-                showLotteries.Id_Rol = 1;
+                showLotteries.Usuario = UsuarioLogueado.Id_Usuario;
+                showLotteries.Id_Rol = UsuarioLogueado.Id_Rol;
                 showLotteries.MdiParent = this;
                 showLotteries.Show();
             }
@@ -139,7 +145,7 @@ namespace InversionesJK.UI
             try
             {
                 addMachines = new AgregarMaquinas();
-                addMachines.Usuario = 1;
+                addMachines.Usuario = UsuarioLogueado.Id_Usuario;
                 addMachines.Accion = "A";
                 addMachines.MdiParent = this;
                 addMachines.Show();
@@ -155,8 +161,8 @@ namespace InversionesJK.UI
             try
             {
                 showMachines = new MostrarMaquinas();
-                showMachines.Usuario = 1;
-                showMachines.Id_Rol = 1;
+                showMachines.Usuario = UsuarioLogueado.Id_Usuario;
+                showMachines.Id_Rol = UsuarioLogueado.Id_Rol;
                 showMachines.MdiParent = this;
                 showMachines.Show();
             }
@@ -293,7 +299,9 @@ namespace InversionesJK.UI
         {
             try
             {
-
+                UsuarioLogueado = new EUsuarios();
+                UsuarioLogueado.Id_Usuario = 1;
+                UsuarioLogueado.Id_Rol = 1;
             }
             catch (Exception ex)
             {
