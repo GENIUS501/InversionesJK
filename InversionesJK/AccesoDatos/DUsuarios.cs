@@ -67,7 +67,7 @@ namespace AccesoDatos
                     Objbd.Usuario = obj.Usuario;
                     Objbd.Nombre = obj.Nombre;
                     Objbd.Id_Rol = obj.Id_Rol;
-                    if (obj.Clave == "")
+                    if (obj.Clave == "********")
                     {
 
                     }

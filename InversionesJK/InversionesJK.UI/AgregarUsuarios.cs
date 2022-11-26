@@ -18,7 +18,7 @@ namespace InversionesJK.UI
         public string Accion { get; set; }
         public int Id { get; set; }
         public int Usuario { get; set; }
-        private string Clave = string.Empty;
+        private string UsuarioViniente = string.Empty;
         public AgregarUsuarios()
         {
             InitializeComponent();
@@ -27,14 +27,14 @@ namespace InversionesJK.UI
         {
             NUsuarios Negocios = new NUsuarios();
             EUsuarios Obj = new EUsuarios();
-            Obj = Negocios.Mostrar().Where(x=>x.Id_Usuario==Id).FirstOrDefault();
+            Obj = Negocios.Mostrar().Where(x => x.Id_Usuario == Id).FirstOrDefault();
             this.txt_cedula.Text = Obj.Cedula.ToString();
             this.txt_nombre.Text = Obj.Nombre;
             this.txt_correo.Text = Obj.Correo;
-            this.txt_clave.Text = Obj.Clave;
+            this.txt_clave.Text = "********";
             this.txt_user.Text = Obj.Usuario;
             this.cbo_rol.SelectedValue = Obj.Id_Rol.ToString();
-            Clave = Obj.Clave;
+            UsuarioViniente = Obj.Usuario;
         }
         private void AgregarUsuarios_Load(object sender, EventArgs e)
         {
@@ -43,12 +43,12 @@ namespace InversionesJK.UI
                 NRoles NegociosRoles = new NRoles();
                 this.cbo_rol.DisplayMember = "Text";
                 this.cbo_rol.ValueMember = "Value";
-                
-                var RolesDataSource = NegociosRoles.Mostrar().Select(x=> new
-                    {
-                        Text=x.Nombre_rol,
-                        Value = x.Id_Rol
-                    }
+
+                var RolesDataSource = NegociosRoles.Mostrar().Select(x => new
+                {
+                    Text = x.Nombre_rol,
+                    Value = x.Id_Rol
+                }
                 );
                 this.cbo_rol.DataSource = RolesDataSource.ToArray();
                 if (Accion == "M" || Accion == "C")
@@ -101,7 +101,7 @@ namespace InversionesJK.UI
                 }
                 Regex Regexa = new Regex(@"^(?=.*[\d])(?=.*[A-Z])(?=.*[a-z])[\w\d]{8,}$");
                 Match Match = Regexa.Match(this.txt_clave.Text);
-                if (Match.Success)
+                if (Match.Success || this.txt_clave.Text == "********")
                 {
 
                 }
@@ -133,6 +133,15 @@ namespace InversionesJK.UI
                     errorProvider1.SetError(this.txt_correo, "Formato de correo invalido");
                     ok = true;
                 }
+                if (this.cbo_rol.SelectedValue == null)
+                {
+                    errorProvider1.SetError(this.cbo_rol, "Debe seleccionar un rol");
+                    ok = true;
+                }
+                if (this.txt_user.Text != UsuarioViniente && Accion == "M")
+                {
+                    errorProvider1.SetError(this.txt_clave,"Debe cambiar la clave necesariamente si cambia el usuario.");
+                }
                 //
             }
             catch (Exception ex)
@@ -152,6 +161,7 @@ namespace InversionesJK.UI
                 errorProvider1.SetError(txt_cclave, "");
                 errorProvider1.SetError(txt_correo, "");
                 errorProvider1.SetError(txt_user, "");
+                errorProvider1.SetError(cbo_rol, "");
             }
             catch (Exception ex)
             {
@@ -177,17 +187,15 @@ namespace InversionesJK.UI
                         Obj.Cedula = this.txt_cedula.Text;
                         Obj.Usuario = this.txt_user.Text;
                         Obj.Nombre = this.txt_nombre.Text;
-                        var d= this.cbo_rol.SelectedValue;
                         Obj.Id_Rol = int.Parse(this.cbo_rol.SelectedValue.ToString());
                         Obj.Correo = this.txt_correo.Text;
                         Obj.Nombre = this.txt_nombre.Text;
-                        Obj.Clave = Helper.EncodePassword(string.Concat(this.txt_user.Text.ToString(), this.txt_clave.ToString()));
                         Int32 FilasAfectadas = 0;
                         #region Agregar
                         if (Accion == "A")
                         {
+                            Obj.Clave = Helper.EncodePassword(string.Concat(this.txt_user.Text.ToString(), this.txt_clave.ToString()));
                             FilasAfectadas = Negocios.Agregar(Obj, Usuario);
-
                             if (FilasAfectadas > 0)
                             {
                                 MessageBox.Show("Usuario Agregado exitosamente!!!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -203,14 +211,11 @@ namespace InversionesJK.UI
                         #region Modificar
                         if (Accion == "M")
                         {
-                            Obj.Id_Usuario= Id;
-                            if (this.txt_clave.Text != Clave)
+                            Obj.Id_Usuario = Id;
+                            Obj.Clave = this.txt_clave.Text;
+                            if (this.txt_clave.Text != "********" || this.txt_user.Text != UsuarioViniente)
                             {
                                 Obj.Clave = Helper.EncodePassword(string.Concat(this.txt_user.Text.ToString(), this.txt_clave.ToString()));
-                            }
-                            else
-                            {
-                                Obj.Clave = "";
                             }
                             FilasAfectadas = Negocios.Modificar(Obj, Usuario);
                             MessageBox.Show("Usuario modificado exitosamente!!!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -229,7 +234,7 @@ namespace InversionesJK.UI
             {
                 MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-}
+        }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
