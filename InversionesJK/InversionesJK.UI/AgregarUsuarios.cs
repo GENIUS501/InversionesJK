@@ -33,7 +33,7 @@ namespace InversionesJK.UI
             this.txt_correo.Text = Obj.Correo;
             this.txt_clave.Text = "********";
             this.txt_user.Text = Obj.Usuario;
-            this.cbo_rol.SelectedValue = Obj.Id_Rol.ToString();
+            this.cbo_rol.SelectedValue = Obj.Id_Rol;
             UsuarioViniente = Obj.Usuario;
         }
         private void AgregarUsuarios_Load(object sender, EventArgs e)

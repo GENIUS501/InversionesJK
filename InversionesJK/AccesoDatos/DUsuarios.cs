@@ -67,6 +67,7 @@ namespace AccesoDatos
                     Objbd.Usuario = obj.Usuario;
                     Objbd.Nombre = obj.Nombre;
                     Objbd.Id_Rol = obj.Id_Rol;
+                    Objbd.Correo = obj.Correo;
                     if (obj.Clave == "********")
                     {
 
@@ -142,10 +143,11 @@ namespace AccesoDatos
                     Cedula = x.Cedula,
                     Clave = x.Clave,
                     Id_Rol = x.Id_Rol,
-                    Id_Usuario=x.Id_Usuario,
-                    Usuario=x.Usuario,
-                    Nombre = x.Nombre
-            }).ToList();
+                    Id_Usuario = x.Id_Usuario,
+                    Usuario = x.Usuario,
+                    Nombre = x.Nombre,
+                    Correo = x.Correo
+                }).ToList();
                 return Lista;
             }
             catch (Exception ex)
@@ -170,7 +172,8 @@ namespace AccesoDatos
                     Id_Rol = x.Id_Rol,
                     Id_Usuario = x.Id_Usuario,
                     Usuario = x.Usuario,
-                    Nombre = x.Nombre
+                    Nombre = x.Nombre,
+                    Correo = x.Correo
                 }).Where(x => x.Usuario == User && x.Clave == Pass).FirstOrDefault();
                 return Obj;
             }
