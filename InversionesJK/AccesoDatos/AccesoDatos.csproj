@@ -61,6 +61,7 @@
       <DependentUpon>InversionesJK.tt</DependentUpon>
     </Compile>
     <Compile Include="DBitacora_movimientos.cs" />
+    <Compile Include="DBitacora_Sesiones.cs" />
     <Compile Include="DLoterias.cs" />
     <Compile Include="DMaquinas.cs" />
     <Compile Include="DPermisos.cs" />

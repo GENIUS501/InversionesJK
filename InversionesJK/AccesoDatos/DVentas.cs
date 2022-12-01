@@ -30,6 +30,7 @@ namespace AccesoDatos
                     Objbd.Id_Usuario = obj.Id_Usuario;
                     Objbd.Multiplicar_Apuesta = obj.Multiplicar_Apuesta;
                     Objbd.Premio_a_pagar = obj.Premio_a_pagar;
+                    Objbd.Porcentaje_Ganancia = obj.Porcentaje_Ganancia;
                     db.Ventas.Add(Objbd);
 
                     int Resultado = db.SaveChanges();
@@ -75,7 +76,8 @@ namespace AccesoDatos
                     ID_loteria = x.ID_loteria,
                     Id_Usuario = x.Id_Usuario,
                     Multiplicar_Apuesta = x.Multiplicar_Apuesta,
-                    Premio_a_pagar = x.Premio_a_pagar
+                    Premio_a_pagar = x.Premio_a_pagar,
+                    Porcentaje_Ganancia = x.Porcentaje_Ganancia
                 }).ToList();
                 return Lista;
             }
@@ -103,6 +105,7 @@ namespace AccesoDatos
                     Objbd.Id_Usuario = obj.Id_Usuario;
                     Objbd.Multiplicar_Apuesta = obj.Multiplicar_Apuesta;
                     Objbd.Premio_a_pagar = obj.Premio_a_pagar;
+                    Objbd.Porcentaje_Ganancia = obj.Porcentaje_Ganancia;
                     db.Entry(Objbd).State = EntityState.Modified;
                     int Resultado = db.SaveChanges();
                     if (Resultado > 0)

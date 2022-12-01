@@ -16,5 +16,62 @@ namespace InversionesJK.UI
         {
             InitializeComponent();
         }
+
+        private void txt_venta_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            try
+            {
+                if (char.IsNumber(e.KeyChar) || char.IsControl(e.KeyChar))
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    e.Handled = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void txt_multiplicador_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            try
+            {
+                if (char.IsNumber(e.KeyChar) || char.IsControl(e.KeyChar))
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    e.Handled = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void txt_apuesta_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            try
+            {
+                if (char.IsNumber(e.KeyChar) || char.IsControl(e.KeyChar))
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    e.Handled = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

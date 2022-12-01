@@ -82,6 +82,7 @@ advertencia 6002: La tabla o vista 'InversionesJK.dbo.Ventas' no tiene definida 
             <PropertyRef Name="ID_maquina" />
             <PropertyRef Name="Id_Usuario" />
             <PropertyRef Name="ID_loteria" />
+            <PropertyRef Name="Porcentaje_Ganancia" />
           </Key>
           <Property Name="ID_venta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="fecha_venta" Type="datetime" Nullable="false" />
@@ -92,6 +93,7 @@ advertencia 6002: La tabla o vista 'InversionesJK.dbo.Ventas' no tiene definida 
           <Property Name="ID_maquina" Type="int" Nullable="false" />
           <Property Name="Id_Usuario" Type="int" Nullable="false" />
           <Property Name="ID_loteria" Type="int" Nullable="false" />
+          <Property Name="Porcentaje_Ganancia" Type="int" Nullable="false" />
         </EntityType>
         <Association Name="Fk_Ingresos_Usuarios">
           <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
@@ -195,7 +197,8 @@ advertencia 6002: La tabla o vista 'InversionesJK.dbo.Ventas' no tiene definida 
     [Ventas].[Multiplicar_Apuesta] AS [Multiplicar_Apuesta], 
     [Ventas].[ID_maquina] AS [ID_maquina], 
     [Ventas].[Id_Usuario] AS [Id_Usuario], 
-    [Ventas].[ID_loteria] AS [ID_loteria]
+    [Ventas].[ID_loteria] AS [ID_loteria], 
+    [Ventas].[Porcentaje_Ganancia] AS [Porcentaje_Ganancia]
     FROM [dbo].[Ventas] AS [Ventas]</DefiningQuery>
           </EntitySet>
           <AssociationSet Name="Fk_Ingresos_Usuarios" Association="Self.Fk_Ingresos_Usuarios">
@@ -318,6 +321,7 @@ advertencia 6002: La tabla o vista 'InversionesJK.dbo.Ventas' no tiene definida 
             <PropertyRef Name="ID_maquina" />
             <PropertyRef Name="Id_Usuario" />
             <PropertyRef Name="ID_loteria" />
+            <PropertyRef Name="Porcentaje_Ganancia" />
           </Key>
           <Property Name="ID_venta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="fecha_venta" Type="DateTime" Nullable="false" Precision="3" />
@@ -328,6 +332,7 @@ advertencia 6002: La tabla o vista 'InversionesJK.dbo.Ventas' no tiene definida 
           <Property Name="ID_maquina" Type="Int32" Nullable="false" />
           <Property Name="Id_Usuario" Type="Int32" Nullable="false" />
           <Property Name="ID_loteria" Type="Int32" Nullable="false" />
+          <Property Name="Porcentaje_Ganancia" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Loterias" Relationship="Self.Fk_Ventas_Loterias" FromRole="Ventas" ToRole="Loterias" />
           <NavigationProperty Name="Maquinas" Relationship="Self.Fk_Ventas_Maquinas" FromRole="Ventas" ToRole="Maquinas" />
           <NavigationProperty Name="Usuarios" Relationship="Self.Fk_Ventas_Usuarios" FromRole="Ventas" ToRole="Usuarios" />
@@ -543,6 +548,7 @@ advertencia 6002: La tabla o vista 'InversionesJK.dbo.Ventas' no tiene definida 
                 <ScalarProperty Name="ID_maquina" ColumnName="ID_maquina" />
                 <ScalarProperty Name="Id_Usuario" ColumnName="Id_Usuario" />
                 <ScalarProperty Name="ID_loteria" ColumnName="ID_loteria" />
+                <ScalarProperty Name="Porcentaje_Ganancia" ColumnName="Porcentaje_Ganancia" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

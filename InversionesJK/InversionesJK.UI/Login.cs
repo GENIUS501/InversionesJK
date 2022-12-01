@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Entidades;
+using Negocios;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +17,59 @@ namespace InversionesJK.UI
         public Login()
         {
             InitializeComponent();
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                NUsuarios Negocios = new NUsuarios();
+                EUsuarios Usu = new EUsuarios();
+                int Id_Session = 0;
+                string pass = Helper.EncodePassword(string.Concat(this.txt_usuario.Text.ToString(), this.txt_pass.ToString()));
+                Usu = Negocios.Login(this.txt_usuario.Text, pass);
+                if (Usu.Id_Usuario != 0)
+                {
+                    NBitacora_Sesiones Ses = new NBitacora_Sesiones();
+                    EBitacora_Sesiones EntidadSesion = new EBitacora_Sesiones();
+                    EntidadSesion.fecha_hora_ingreso = DateTime.Now;
+                    EntidadSesion.Id_Usuario = Usu.Id_Usuario;
+                    Id_Session = Ses.Agregar(EntidadSesion);
+                    if (Id_Session > 0)
+                    {
+                        this.Hide();
+                        Principal form = new Principal();
+                        form.Idsession = Id_Session;
+                        form.UsuarioLogueado = Usu;
+                        MessageBox.Show("Bienvenido: " + Usu.Usuario, "Bienvenido", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        form.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al ingresar!!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Error usuario o contraseña invalido!!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EBitacora_movimientos.cs" />
+    <Compile Include="EBitacora_Sesiones.cs" />
     <Compile Include="ELoterias.cs" />
     <Compile Include="EMaquinas.cs" />
     <Compile Include="EPermisos.cs" />

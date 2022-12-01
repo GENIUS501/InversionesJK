@@ -1,4 +1,5 @@
 ﻿using Entidades;
+using Negocios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -299,9 +300,44 @@ namespace InversionesJK.UI
         {
             try
             {
-                UsuarioLogueado = new EUsuarios();
-                UsuarioLogueado.Id_Usuario = 1;
-                UsuarioLogueado.Id_Rol = 1;
+                txt_usuario.Text = UsuarioLogueado.Usuario;
+                List<EPermisos> perm = new List<EPermisos>();
+                NRoles Negocios = new NRoles();
+                usuariosToolStripMenuItem.Visible = false;
+                rolesYPermisosToolStripMenuItem.Visible = false;
+                registroLoteriaToolStripMenuItem.Visible = false;
+                maquinasToolStripMenuItem.Visible = false;
+                registroVentasToolStripMenuItem.Visible = false;
+                reportesToolStripMenuItem.Visible = false;
+                ventasToolStripMenuItem.Visible = false;
+                perm = Negocios.llenar_Permisos(UsuarioLogueado.Id_Rol);
+                if (perm.Where(x => x.Modulo == "Usuarios").FirstOrDefault() != null)
+                {
+                    usuariosToolStripMenuItem.Visible = true;
+                }
+                if (perm.Where(x => x.Modulo == "Roles").FirstOrDefault() != null)
+                {
+                    rolesYPermisosToolStripMenuItem.Visible = true;
+                }
+                if (perm.Where(x => x.Modulo == "Loterias").FirstOrDefault() != null)
+                {
+                    registroLoteriaToolStripMenuItem.Visible = true;
+                }
+                if (perm.Where(x => x.Modulo == "Ventas").FirstOrDefault() != null)
+                {
+                    registroVentasToolStripMenuItem.Visible = true;
+                }
+                if (perm.Where(x => x.Modulo == "Maquinas").FirstOrDefault() != null)
+                {
+                    maquinasToolStripMenuItem.Visible = true;
+                }
+                if (perm.Where(x => x.Modulo == "ReporteVentas").FirstOrDefault() != null)
+                {
+                    ventasToolStripMenuItem.Visible = true;
+                }
+                //UsuarioLogueado = new EUsuarios();
+                //UsuarioLogueado.Id_Usuario = 1;
+                //UsuarioLogueado.Id_Rol = 1;
             }
             catch (Exception ex)
             {

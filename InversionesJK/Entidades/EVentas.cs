@@ -17,5 +17,6 @@ namespace Entidades
         public int ID_maquina { get; set; }
         public int Id_Usuario { get; set; }
         public int ID_loteria { get; set; }
+        public int Porcentaje_Ganancia { get; set; }
     }
 }
