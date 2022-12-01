@@ -178,6 +178,8 @@ namespace InversionesJK.UI
             try
             {
                 addSales = new AgregarVentas();
+                addSales.Accion = "A";
+                addSales.Usuario = UsuarioLogueado.Id_Usuario;
                 addSales.MdiParent = this;
                 addSales.Show();
             }

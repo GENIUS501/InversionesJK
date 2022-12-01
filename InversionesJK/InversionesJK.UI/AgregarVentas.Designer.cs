@@ -29,6 +29,7 @@ namespace InversionesJK.UI
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgregarVentas));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -45,7 +46,7 @@ namespace InversionesJK.UI
             this.cbo_maquina = new System.Windows.Forms.ComboBox();
             this.dtp_fecha_maq = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbl_codigo_venta = new System.Windows.Forms.Label();
             this.txt_codigo_venta = new System.Windows.Forms.MaskedTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_premio = new System.Windows.Forms.TextBox();
@@ -54,11 +55,13 @@ namespace InversionesJK.UI
             this.txt_porcentaje_ganancia = new System.Windows.Forms.TextBox();
             this.lbl_ganancia = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txt_comision_ganancia = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -83,6 +86,7 @@ namespace InversionesJK.UI
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAceptar
             // 
@@ -96,6 +100,7 @@ namespace InversionesJK.UI
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // groupBox1
             // 
@@ -113,7 +118,7 @@ namespace InversionesJK.UI
             this.groupBox1.Controls.Add(this.cbo_maquina);
             this.groupBox1.Controls.Add(this.dtp_fecha_maq);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.lbl_codigo_venta);
             this.groupBox1.Controls.Add(this.txt_codigo_venta);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.txt_venta);
@@ -132,6 +137,7 @@ namespace InversionesJK.UI
             this.btn_calcular.TabIndex = 39;
             this.btn_calcular.Text = "Calcular resultados";
             this.btn_calcular.UseVisualStyleBackColor = true;
+            this.btn_calcular.Click += new System.EventHandler(this.btn_calcular_Click);
             // 
             // label8
             // 
@@ -224,14 +230,14 @@ namespace InversionesJK.UI
             this.label1.TabIndex = 29;
             this.label1.Text = "Fecha";
             // 
-            // label2
+            // lbl_codigo_venta
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 26);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 13);
-            this.label2.TabIndex = 22;
-            this.label2.Text = "Codigo de Venta";
+            this.lbl_codigo_venta.AutoSize = true;
+            this.lbl_codigo_venta.Location = new System.Drawing.Point(12, 26);
+            this.lbl_codigo_venta.Name = "lbl_codigo_venta";
+            this.lbl_codigo_venta.Size = new System.Drawing.Size(86, 13);
+            this.lbl_codigo_venta.TabIndex = 22;
+            this.lbl_codigo_venta.Text = "Codigo de Venta";
             // 
             // txt_codigo_venta
             // 
@@ -280,6 +286,7 @@ namespace InversionesJK.UI
             this.txt_porcentaje_ganancia.Name = "txt_porcentaje_ganancia";
             this.txt_porcentaje_ganancia.Size = new System.Drawing.Size(100, 20);
             this.txt_porcentaje_ganancia.TabIndex = 40;
+            this.txt_porcentaje_ganancia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_porcentaje_ganancia_KeyPress);
             // 
             // lbl_ganancia
             // 
@@ -299,17 +306,17 @@ namespace InversionesJK.UI
             this.label9.TabIndex = 42;
             this.label9.Text = "Comision o ganancia";
             // 
-            // textBox2
+            // txt_comision_ganancia
             // 
-            this.textBox2.Location = new System.Drawing.Point(178, 46);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 43;
+            this.txt_comision_ganancia.Location = new System.Drawing.Point(178, 46);
+            this.txt_comision_ganancia.Name = "txt_comision_ganancia";
+            this.txt_comision_ganancia.Size = new System.Drawing.Size(100, 20);
+            this.txt_comision_ganancia.TabIndex = 43;
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.txt_comision_ganancia);
             this.groupBox2.Controls.Add(this.txt_premio);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Location = new System.Drawing.Point(6, 234);
@@ -319,22 +326,30 @@ namespace InversionesJK.UI
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Resultados";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // AgregarVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(462, 449);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
             this.Name = "AgregarVentas";
             this.Text = "Agregar Ventas";
+            this.Load += new System.EventHandler(this.AgregarVentas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -345,7 +360,7 @@ namespace InversionesJK.UI
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbl_codigo_venta;
         private System.Windows.Forms.MaskedTextBox txt_codigo_venta;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txt_premio;
@@ -362,10 +377,11 @@ namespace InversionesJK.UI
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txt_apuesta;
         private System.Windows.Forms.Button btn_calcular;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txt_comision_ganancia;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label lbl_ganancia;
         private System.Windows.Forms.TextBox txt_porcentaje_ganancia;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
