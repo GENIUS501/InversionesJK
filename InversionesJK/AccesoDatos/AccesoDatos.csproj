@@ -66,6 +66,7 @@
     <Compile Include="DPermisos.cs" />
     <Compile Include="DRoles.cs" />
     <Compile Include="DUsuarios.cs" />
+    <Compile Include="DVentas.cs" />
     <Compile Include="InversionesJK.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
