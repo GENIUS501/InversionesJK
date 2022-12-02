@@ -29,8 +29,24 @@ namespace InversionesJK.UI
             try
             {
                 NVentas Negocios = new NVentas();
+                NLoterias NegociosLoterias = new NLoterias();
+                NMaquinas NegociosMaquinas = new NMaquinas();
+                NUsuarios NegociosUsuarios = new NUsuarios();
                 EVentas Entidad = new EVentas();
-                dat_principal.DataSource = Negocios.Mostrar();
+                dat_principal.DataSource = Negocios.Mostrar().Select(x => new
+                {
+                    Id_Venta = x.ID_venta,
+                    Apuesta = x.Apuesta,
+                    Cantidad_de_venta = x.Cantidad_de_Venta,
+                    Fecha_Venta = x.fecha_venta,
+                    Multiplicar_Apuesta = x.Multiplicar_Apuesta,
+                    Porcentaje_Ganancia = x.Porcentaje_Ganancia+"%",
+                    Premio_a_pagar = x.Premio_a_pagar,
+                    Loteria = NegociosLoterias.Mostrar().Where(y=>y.ID_loteria==x.ID_loteria).Select(y=>y.Nombre_loteria).FirstOrDefault(),
+                    Maquina = NegociosMaquinas.Mostrar().Where(y=>y.ID_maquina==x.ID_maquina).Select(y=>y.Nombre_maquina).FirstOrDefault(),
+                    Usuario = NegociosUsuarios.Mostrar().Where(y=>y.Id_Usuario==x.Id_Usuario).Select(y=>y.Usuario).FirstOrDefault()
+                }
+                ).ToList();
                 valorcelda = -1;
                 this.dat_principal.ReadOnly = true;
                 //NRol NegociosRoles = new NRol();
