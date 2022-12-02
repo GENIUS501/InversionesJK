@@ -153,12 +153,105 @@ namespace InversionesJK.UI
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+            try
+            {
+                try
+                {
+                    if (Accion == "C")
+                    {
+                        this.Close();
+                    }
+                    Limpiar_Calculos();
+                    if (Validar_Calculos())
+                    {
+                        if (Accion == "A" || Accion == "M")
+                        {
+                            EVentas Obj = new EVentas();
+                            Obj.Apuesta = double.Parse(this.txt_apuesta.Text);
+                            Obj.Multiplicar_Apuesta=int.Parse(this.txt_multiplicador.Text);
+                            Obj.Porcentaje_Ganancia=int.Parse(this.txt_porcentaje_ganancia.Text);
+                            Obj.Cantidad_de_Venta=int.Parse(this.txt_venta.Text);
+                            Obj.Premio_a_pagar=int.Parse(this.txt_premio.Text);
+                            Obj.ID_loteria=int.Parse(this.cbo_loteria.SelectedValue.ToString());
+                            Obj.ID_maquina=int.Parse(this.cbo_maquina.SelectedValue.ToString());
+                            Obj.Id_Usuario = Usuario;
+                            Obj.fecha_venta=Convert.ToDateTime(this.dtp_fecha_maq.Text);
+                            NVentas Negocios = new NVentas();
+                            Int32 FilasAfectadas = 0;
+                            #region Agregar
+                            if (Accion == "A")
+                            {
+                                FilasAfectadas = Negocios.Agregar(Obj, Usuario);
 
+                                if (FilasAfectadas > 0)
+                                {
+                                    MessageBox.Show("Se agrego la venta", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    this.Close();
+                                }
+                                else
+                                {
+                                    if (FilasAfectadas == -1)
+                                    {
+                                        MessageBox.Show("La venta se ha agregado exitosamente pero no se a podido registrar la transaccion!!!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                        this.Close();
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("No se pudo agregar la venta!!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    }
+                                }
+                            }
+                            #endregion
+
+                            #region Modificar
+                            if (Accion == "M")
+                            {
+                                Obj.ID_venta = int.Parse(this.txt_codigo_venta.Text);
+                                Obj.Id_Usuario = UsuarioRegistroVenta;
+                                FilasAfectadas = Negocios.Modificar(Obj, Usuario);
+                                if (FilasAfectadas > 0)
+                                {
+                                    MessageBox.Show("Venta modificada exitosamente!!!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    this.Close();
+                                }
+                                else
+                                {
+                                    if (FilasAfectadas == -1)
+                                    {
+                                        MessageBox.Show("La venta se ha modificado exitosamente pero no se a podido registrar la transaccion!!!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                        this.Close();
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("No se pudo modificar la venta!!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    }
+                                }
+                            }
+                            #endregion
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         private void LlenarCombos()
         {
@@ -197,6 +290,7 @@ namespace InversionesJK.UI
                 this.txt_premio.Text = Obj.Premio_a_pagar.ToString();
                 this.cbo_loteria.SelectedValue = Obj.ID_loteria;
                 this.cbo_maquina.SelectedValue = Obj.ID_maquina;
+                this.dtp_fecha_maq.Text = Obj.fecha_venta.ToString();
                 UsuarioRegistroVenta = Obj.Id_Usuario;
             }
         }

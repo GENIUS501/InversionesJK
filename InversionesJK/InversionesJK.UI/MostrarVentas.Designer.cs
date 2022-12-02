@@ -37,12 +37,12 @@ namespace InversionesJK.UI
             this.btn_editar = new System.Windows.Forms.Button();
             this.btn_agregar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cbo_maquina = new System.Windows.Forms.ComboBox();
             this.btn_buscar_nombre = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_buscar = new System.Windows.Forms.Button();
             this.txt_buscar_venta = new System.Windows.Forms.MaskedTextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cbo_maquina = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dat_principal)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -60,11 +60,13 @@ namespace InversionesJK.UI
             // 
             // dat_principal
             // 
+            this.dat_principal.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dat_principal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dat_principal.Location = new System.Drawing.Point(32, 241);
             this.dat_principal.Name = "dat_principal";
             this.dat_principal.Size = new System.Drawing.Size(739, 185);
             this.dat_principal.TabIndex = 94;
+            this.dat_principal.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dat_principal_CellClick);
             // 
             // btn_consultar
             // 
@@ -76,6 +78,7 @@ namespace InversionesJK.UI
             this.btn_consultar.TabIndex = 93;
             this.btn_consultar.Text = "Consultar";
             this.btn_consultar.UseVisualStyleBackColor = true;
+            this.btn_consultar.Click += new System.EventHandler(this.btn_consultar_Click);
             // 
             // btn_eliminar
             // 
@@ -87,6 +90,7 @@ namespace InversionesJK.UI
             this.btn_eliminar.TabIndex = 92;
             this.btn_eliminar.Text = "Eliminar";
             this.btn_eliminar.UseVisualStyleBackColor = true;
+            this.btn_eliminar.Click += new System.EventHandler(this.btn_eliminar_Click);
             // 
             // btn_editar
             // 
@@ -98,6 +102,7 @@ namespace InversionesJK.UI
             this.btn_editar.TabIndex = 91;
             this.btn_editar.Text = "Modificar";
             this.btn_editar.UseVisualStyleBackColor = true;
+            this.btn_editar.Click += new System.EventHandler(this.btn_editar_Click);
             // 
             // btn_agregar
             // 
@@ -109,6 +114,7 @@ namespace InversionesJK.UI
             this.btn_agregar.TabIndex = 90;
             this.btn_agregar.Text = "Agregar";
             this.btn_agregar.UseVisualStyleBackColor = true;
+            this.btn_agregar.Click += new System.EventHandler(this.btn_agregar_Click);
             // 
             // groupBox1
             // 
@@ -124,6 +130,26 @@ namespace InversionesJK.UI
             this.groupBox1.TabIndex = 89;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos de busqueda";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 88);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(48, 13);
+            this.label4.TabIndex = 47;
+            this.label4.Text = "Maquina";
+            // 
+            // cbo_maquina
+            // 
+            this.cbo_maquina.DisplayMember = "NombreRol";
+            this.cbo_maquina.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbo_maquina.FormattingEnabled = true;
+            this.cbo_maquina.Location = new System.Drawing.Point(6, 104);
+            this.cbo_maquina.Name = "cbo_maquina";
+            this.cbo_maquina.Size = new System.Drawing.Size(169, 21);
+            this.cbo_maquina.TabIndex = 46;
+            this.cbo_maquina.ValueMember = "IdRol";
             // 
             // btn_buscar_nombre
             // 
@@ -162,26 +188,6 @@ namespace InversionesJK.UI
             this.txt_buscar_venta.Size = new System.Drawing.Size(100, 20);
             this.txt_buscar_venta.TabIndex = 0;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 88);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(48, 13);
-            this.label4.TabIndex = 47;
-            this.label4.Text = "Maquina";
-            // 
-            // cbo_maquina
-            // 
-            this.cbo_maquina.DisplayMember = "NombreRol";
-            this.cbo_maquina.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbo_maquina.FormattingEnabled = true;
-            this.cbo_maquina.Location = new System.Drawing.Point(6, 104);
-            this.cbo_maquina.Name = "cbo_maquina";
-            this.cbo_maquina.Size = new System.Drawing.Size(169, 21);
-            this.cbo_maquina.TabIndex = 46;
-            this.cbo_maquina.ValueMember = "IdRol";
-            // 
             // MostrarVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -196,6 +202,7 @@ namespace InversionesJK.UI
             this.Controls.Add(this.groupBox1);
             this.Name = "MostrarVentas";
             this.Text = "MostrarVentas";
+            this.Load += new System.EventHandler(this.MostrarVentas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dat_principal)).EndInit();
             this.groupBox1.ResumeLayout(false);

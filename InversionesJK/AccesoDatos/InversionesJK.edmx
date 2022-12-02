@@ -69,20 +69,9 @@
           <Property Name="Clave" Type="varchar(max)" Nullable="false" />
           <Property Name="Id_Rol" Type="int" Nullable="false" />
         </EntityType>
-        <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'InversionesJK.dbo.Ventas' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="Ventas">
           <Key>
             <PropertyRef Name="ID_venta" />
-            <PropertyRef Name="fecha_venta" />
-            <PropertyRef Name="Cantidad_de_Venta" />
-            <PropertyRef Name="Premio_a_pagar" />
-            <PropertyRef Name="Apuesta" />
-            <PropertyRef Name="Multiplicar_Apuesta" />
-            <PropertyRef Name="ID_maquina" />
-            <PropertyRef Name="Id_Usuario" />
-            <PropertyRef Name="ID_loteria" />
-            <PropertyRef Name="Porcentaje_Ganancia" />
           </Key>
           <Property Name="ID_venta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="fecha_venta" Type="datetime" Nullable="false" />
@@ -187,20 +176,7 @@ advertencia 6002: La tabla o vista 'InversionesJK.dbo.Ventas' no tiene definida 
           <EntitySet Name="Permisos" EntityType="Self.Permisos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Ventas" EntityType="Self.Ventas" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [Ventas].[ID_venta] AS [ID_venta], 
-    [Ventas].[fecha_venta] AS [fecha_venta], 
-    [Ventas].[Cantidad_de_Venta] AS [Cantidad_de_Venta], 
-    [Ventas].[Premio_a_pagar] AS [Premio_a_pagar], 
-    [Ventas].[Apuesta] AS [Apuesta], 
-    [Ventas].[Multiplicar_Apuesta] AS [Multiplicar_Apuesta], 
-    [Ventas].[ID_maquina] AS [ID_maquina], 
-    [Ventas].[Id_Usuario] AS [Id_Usuario], 
-    [Ventas].[ID_loteria] AS [ID_loteria], 
-    [Ventas].[Porcentaje_Ganancia] AS [Porcentaje_Ganancia]
-    FROM [dbo].[Ventas] AS [Ventas]</DefiningQuery>
-          </EntitySet>
+          <EntitySet Name="Ventas" EntityType="Self.Ventas" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="Fk_Ingresos_Usuarios" Association="Self.Fk_Ingresos_Usuarios">
             <End Role="Usuarios" EntitySet="Usuarios" />
             <End Role="Bitacora_ingreso_salida" EntitySet="Bitacora_ingreso_salida" />
@@ -313,15 +289,6 @@ advertencia 6002: La tabla o vista 'InversionesJK.dbo.Ventas' no tiene definida 
         <EntityType Name="Ventas">
           <Key>
             <PropertyRef Name="ID_venta" />
-            <PropertyRef Name="fecha_venta" />
-            <PropertyRef Name="Cantidad_de_Venta" />
-            <PropertyRef Name="Premio_a_pagar" />
-            <PropertyRef Name="Apuesta" />
-            <PropertyRef Name="Multiplicar_Apuesta" />
-            <PropertyRef Name="ID_maquina" />
-            <PropertyRef Name="Id_Usuario" />
-            <PropertyRef Name="ID_loteria" />
-            <PropertyRef Name="Porcentaje_Ganancia" />
           </Key>
           <Property Name="ID_venta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="fecha_venta" Type="DateTime" Nullable="false" Precision="3" />
