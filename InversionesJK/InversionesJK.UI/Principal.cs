@@ -208,6 +208,7 @@ namespace InversionesJK.UI
             try
             {
                 addReportMachines = new ReporteMaquinas();
+                addReportMachines.Usuario = UsuarioLogueado.Usuario;
                 addReportMachines.MdiParent = this;
                 addReportMachines.Show();
             }
@@ -310,7 +311,7 @@ namespace InversionesJK.UI
                 registroLoteriaToolStripMenuItem.Visible = false;
                 maquinasToolStripMenuItem.Visible = false;
                 registroVentasToolStripMenuItem.Visible = false;
-                reportesToolStripMenuItem.Visible = false;
+               // reportesToolStripMenuItem.Visible = false;
                 ventasToolStripMenuItem.Visible = false;
                 perm = Negocios.llenar_Permisos(UsuarioLogueado.Id_Rol);
                 if (perm.Where(x => x.Modulo == "Usuarios").FirstOrDefault() != null)

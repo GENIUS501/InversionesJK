@@ -32,17 +32,17 @@ namespace InversionesJK.UI
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReporteVentas));
             this.dat_principal = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dtp_fecha_maq = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
+            this.btn_buscar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.txt_maquina = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.btn_imprimir_cedula = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.btn_buscar = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.dtp_fecha_maq = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dat_principal)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -78,6 +78,45 @@ namespace InversionesJK.UI
             this.groupBox1.TabIndex = 78;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos de busqueda";
+            // 
+            // dtp_fecha_maq
+            // 
+            this.dtp_fecha_maq.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtp_fecha_maq.Location = new System.Drawing.Point(6, 102);
+            this.dtp_fecha_maq.Name = "dtp_fecha_maq";
+            this.dtp_fecha_maq.Size = new System.Drawing.Size(100, 20);
+            this.dtp_fecha_maq.TabIndex = 58;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 86);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(37, 13);
+            this.label4.TabIndex = 57;
+            this.label4.Text = "Fecha";
+            // 
+            // button5
+            // 
+            this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
+            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button5.Location = new System.Drawing.Point(115, 100);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(25, 20);
+            this.button5.TabIndex = 53;
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // btn_buscar
+            // 
+            this.btn_buscar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_buscar.BackgroundImage")));
+            this.btn_buscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_buscar.Location = new System.Drawing.Point(115, 45);
+            this.btn_buscar.Name = "btn_buscar";
+            this.btn_buscar.Size = new System.Drawing.Size(25, 20);
+            this.btn_buscar.TabIndex = 52;
+            this.btn_buscar.UseVisualStyleBackColor = true;
+            this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
             // 
             // label2
             // 
@@ -130,29 +169,9 @@ namespace InversionesJK.UI
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(6, 29);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 13);
+            this.label1.Size = new System.Drawing.Size(61, 13);
             this.label1.TabIndex = 35;
-            this.label1.Text = "Nombre de Maquina";
-            // 
-            // btn_buscar
-            // 
-            this.btn_buscar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_buscar.BackgroundImage")));
-            this.btn_buscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_buscar.Location = new System.Drawing.Point(115, 45);
-            this.btn_buscar.Name = "btn_buscar";
-            this.btn_buscar.Size = new System.Drawing.Size(25, 20);
-            this.btn_buscar.TabIndex = 52;
-            this.btn_buscar.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
-            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button5.Location = new System.Drawing.Point(115, 100);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(25, 20);
-            this.button5.TabIndex = 53;
-            this.button5.UseVisualStyleBackColor = true;
+            this.label1.Text = "Id de venta";
             // 
             // pictureBox1
             // 
@@ -164,33 +183,19 @@ namespace InversionesJK.UI
             this.pictureBox1.TabIndex = 89;
             this.pictureBox1.TabStop = false;
             // 
-            // dtp_fecha_maq
-            // 
-            this.dtp_fecha_maq.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_fecha_maq.Location = new System.Drawing.Point(6, 102);
-            this.dtp_fecha_maq.Name = "dtp_fecha_maq";
-            this.dtp_fecha_maq.Size = new System.Drawing.Size(100, 20);
-            this.dtp_fecha_maq.TabIndex = 58;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 86);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(37, 13);
-            this.label4.TabIndex = 57;
-            this.label4.Text = "Fecha";
-            // 
             // ReporteVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dat_principal);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
             this.Name = "ReporteVentas";
             this.Text = "Reporte de Ventas";
+            this.Load += new System.EventHandler(this.ReporteVentas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dat_principal)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

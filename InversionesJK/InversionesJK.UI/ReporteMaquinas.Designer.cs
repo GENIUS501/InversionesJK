@@ -33,15 +33,15 @@ namespace InversionesJK.UI
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dat_principal = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button5 = new System.Windows.Forms.Button();
+            this.txt_ubi_maq = new System.Windows.Forms.TextBox();
+            this.btn_buscar_ubicacion = new System.Windows.Forms.Button();
             this.btn_buscar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btn_imprimir_todo = new System.Windows.Forms.Button();
             this.txt_nombre = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_ubicacion = new System.Windows.Forms.Button();
             this.btn_imprimir_maquina = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.txt_ubi_maq = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dat_principal)).BeginInit();
@@ -73,12 +73,12 @@ namespace InversionesJK.UI
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.txt_ubi_maq);
-            this.groupBox1.Controls.Add(this.button5);
+            this.groupBox1.Controls.Add(this.btn_buscar_ubicacion);
             this.groupBox1.Controls.Add(this.btn_buscar);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.button3);
+            this.groupBox1.Controls.Add(this.btn_imprimir_todo);
             this.groupBox1.Controls.Add(this.txt_nombre);
-            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.btn_ubicacion);
             this.groupBox1.Controls.Add(this.btn_imprimir_maquina);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label3);
@@ -89,15 +89,24 @@ namespace InversionesJK.UI
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos de busqueda";
             // 
-            // button5
+            // txt_ubi_maq
             // 
-            this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
-            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button5.Location = new System.Drawing.Point(126, 101);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(25, 20);
-            this.button5.TabIndex = 53;
-            this.button5.UseVisualStyleBackColor = true;
+            this.txt_ubi_maq.Location = new System.Drawing.Point(9, 102);
+            this.txt_ubi_maq.Name = "txt_ubi_maq";
+            this.txt_ubi_maq.Size = new System.Drawing.Size(111, 20);
+            this.txt_ubi_maq.TabIndex = 54;
+            // 
+            // btn_buscar_ubicacion
+            // 
+            this.btn_buscar_ubicacion.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_buscar_ubicacion.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_buscar_ubicacion.BackgroundImage")));
+            this.btn_buscar_ubicacion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_buscar_ubicacion.Location = new System.Drawing.Point(126, 101);
+            this.btn_buscar_ubicacion.Name = "btn_buscar_ubicacion";
+            this.btn_buscar_ubicacion.Size = new System.Drawing.Size(25, 20);
+            this.btn_buscar_ubicacion.TabIndex = 53;
+            this.btn_buscar_ubicacion.UseVisualStyleBackColor = true;
+            this.btn_buscar_ubicacion.Click += new System.EventHandler(this.btn_buscar_ubicacion_Click);
             // 
             // btn_buscar
             // 
@@ -108,6 +117,7 @@ namespace InversionesJK.UI
             this.btn_buscar.Size = new System.Drawing.Size(25, 20);
             this.btn_buscar.TabIndex = 52;
             this.btn_buscar.UseVisualStyleBackColor = true;
+            this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
             // 
             // label2
             // 
@@ -118,15 +128,16 @@ namespace InversionesJK.UI
             this.label2.TabIndex = 51;
             this.label2.Text = "Imprimir todo";
             // 
-            // button3
+            // btn_imprimir_todo
             // 
-            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.Location = new System.Drawing.Point(264, 45);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(62, 54);
-            this.button3.TabIndex = 6;
-            this.button3.UseVisualStyleBackColor = true;
+            this.btn_imprimir_todo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_imprimir_todo.BackgroundImage")));
+            this.btn_imprimir_todo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_imprimir_todo.Location = new System.Drawing.Point(264, 45);
+            this.btn_imprimir_todo.Name = "btn_imprimir_todo";
+            this.btn_imprimir_todo.Size = new System.Drawing.Size(62, 54);
+            this.btn_imprimir_todo.TabIndex = 6;
+            this.btn_imprimir_todo.UseVisualStyleBackColor = true;
+            this.btn_imprimir_todo.Click += new System.EventHandler(this.btn_imprimir_todo_Click);
             // 
             // txt_nombre
             // 
@@ -135,15 +146,15 @@ namespace InversionesJK.UI
             this.txt_nombre.Size = new System.Drawing.Size(100, 20);
             this.txt_nombre.TabIndex = 0;
             // 
-            // button2
+            // btn_ubicacion
             // 
-            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Location = new System.Drawing.Point(157, 102);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(25, 20);
-            this.button2.TabIndex = 5;
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_ubicacion.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_ubicacion.BackgroundImage")));
+            this.btn_ubicacion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_ubicacion.Location = new System.Drawing.Point(157, 102);
+            this.btn_ubicacion.Name = "btn_ubicacion";
+            this.btn_ubicacion.Size = new System.Drawing.Size(25, 20);
+            this.btn_ubicacion.TabIndex = 5;
+            this.btn_ubicacion.UseVisualStyleBackColor = true;
             // 
             // btn_imprimir_maquina
             // 
@@ -164,13 +175,6 @@ namespace InversionesJK.UI
             this.label1.TabIndex = 35;
             this.label1.Text = "Nombre de Maquina";
             // 
-            // txt_ubi_maq
-            // 
-            this.txt_ubi_maq.Location = new System.Drawing.Point(9, 102);
-            this.txt_ubi_maq.Name = "txt_ubi_maq";
-            this.txt_ubi_maq.Size = new System.Drawing.Size(111, 20);
-            this.txt_ubi_maq.TabIndex = 54;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -184,12 +188,15 @@ namespace InversionesJK.UI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dat_principal);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
             this.Name = "ReporteMaquinas";
             this.Text = "Reporte de Maquinas";
+            this.Load += new System.EventHandler(this.ReporteMaquinas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dat_principal)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -203,12 +210,12 @@ namespace InversionesJK.UI
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridView dat_principal;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btn_buscar_ubicacion;
         private System.Windows.Forms.Button btn_buscar;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btn_imprimir_todo;
         private System.Windows.Forms.TextBox txt_nombre;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_ubicacion;
         private System.Windows.Forms.Button btn_imprimir_maquina;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_ubi_maq;
