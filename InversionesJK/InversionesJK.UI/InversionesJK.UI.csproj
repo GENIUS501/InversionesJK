@@ -220,6 +220,12 @@
     <Compile Include="Visor_Bitacora_Ingresos.Designer.cs">
       <DependentUpon>Visor_Bitacora_Ingresos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Visor_Bitacora_Movimientos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visor_Bitacora_Movimientos.Designer.cs">
+      <DependentUpon>Visor_Bitacora_Movimientos.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Acercade.resx">
       <DependentUpon>Acercade.cs</DependentUpon>
     </EmbeddedResource>
@@ -245,6 +251,7 @@
     <EmbeddedResource Include="Bitacora_Ingresos.resx">
       <DependentUpon>Bitacora_Ingresos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Bitacora_movimientos.rdlc" />
     <EmbeddedResource Include="Bitacora_Movimientos.resx">
       <DependentUpon>Bitacora_Movimientos.cs</DependentUpon>
     </EmbeddedResource>
@@ -301,6 +308,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Visor_Bitacora_Ingresos.resx">
       <DependentUpon>Visor_Bitacora_Ingresos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visor_Bitacora_Movimientos.resx">
+      <DependentUpon>Visor_Bitacora_Movimientos.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="InversionesJKDataSet.xsc">
       <DependentUpon>InversionesJKDataSet.xsd</DependentUpon>
