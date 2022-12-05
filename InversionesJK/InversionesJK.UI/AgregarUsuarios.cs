@@ -138,9 +138,10 @@ namespace InversionesJK.UI
                     errorProvider1.SetError(this.cbo_rol, "Debe seleccionar un rol");
                     ok = true;
                 }
-                if (this.txt_user.Text != UsuarioViniente && Accion == "M")
+                if (this.txt_user.Text != UsuarioViniente && Accion == "M" && this.txt_clave.Text== "********")
                 {
                     errorProvider1.SetError(this.txt_clave,"Debe cambiar la clave necesariamente si cambia el usuario.");
+                    ok = true;
                 }
                 //
             }

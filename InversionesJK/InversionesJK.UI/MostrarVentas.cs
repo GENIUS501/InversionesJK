@@ -49,25 +49,25 @@ namespace InversionesJK.UI
                 ).ToList();
                 valorcelda = -1;
                 this.dat_principal.ReadOnly = true;
-                //NRol NegociosRoles = new NRol();
-                //List<EPermisos> perm = new List<EPermisos>();
-                //perm = NegociosRoles.llenar_Permisos(Id_Rol, "Categoria");
-                //if (perm.Where(x => x.Accion == "Agregar").FirstOrDefault() != null)
-                //{
-                this.btn_agregar.Enabled = true;
-                //}
-                //if (perm.Where(x => x.Accion == "Modificar").FirstOrDefault() != null)
-                //{
-                this.btn_editar.Enabled = true;
-                //}
-                //if (perm.Where(x => x.Accion == "Eliminar").FirstOrDefault() != null)
-                //{
-                this.btn_eliminar.Enabled = true;
-                //}
-                //if (perm.Where(x => x.Accion == "Consultar").FirstOrDefault() != null)
-                //{
-                this.btn_consultar.Enabled = true;
-                //}
+                NRoles NegociosRoles = new NRoles();
+                List<EPermisos> perm = new List<EPermisos>();
+                perm = NegociosRoles.llenar_Permisos(Id_Rol, "Ventas");
+                if (perm.Where(x => x.Accion == "Agregar").FirstOrDefault() != null)
+                {
+                    this.btn_agregar.Enabled = true;
+                }
+                if (perm.Where(x => x.Accion == "Modificar").FirstOrDefault() != null)
+                {
+                    this.btn_editar.Enabled = true;
+                }
+                if (perm.Where(x => x.Accion == "Eliminar").FirstOrDefault() != null)
+                {
+                    this.btn_eliminar.Enabled = true;
+                }
+                if (perm.Where(x => x.Accion == "Consultar").FirstOrDefault() != null)
+                {
+                    this.btn_consultar.Enabled = true;
+                }
             }
             catch (Exception ex)
             {

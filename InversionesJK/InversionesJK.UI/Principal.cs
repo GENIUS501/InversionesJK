@@ -194,6 +194,7 @@ namespace InversionesJK.UI
             try
             {
                 showSales = new MostrarVentas();
+                showSales.Id_Rol = UsuarioLogueado.Id_Rol;
                 showSales.MdiParent = this;
                 showSales.Show();
             }
@@ -327,8 +328,17 @@ namespace InversionesJK.UI
                 registroLoteriaToolStripMenuItem.Visible = false;
                 maquinasToolStripMenuItem.Visible = false;
                 registroVentasToolStripMenuItem.Visible = false;
-               // reportesToolStripMenuItem.Visible = false;
+                reportesToolStripMenuItem.Visible = false;
                 ventasToolStripMenuItem.Visible = false;
+                maquinasToolStripMenuItem1.Visible = false;
+                loteriasToolStripMenuItem.Visible = false;
+                ingresoYSalidasUsuariosToolStripMenuItem.Visible = false;
+                movimientosToolStripMenuItem.Visible = false;
+                agregarToolStripMenuItem2.Visible = false;
+                agregarToolStripMenuItem3.Visible = false;
+                agregarToolStripMenuItem1.Visible = false;
+                agregarToolStripMenuItem.Visible = false;
+                agregarToolStripMenuItem4.Visible = false;
                 perm = Negocios.llenar_Permisos(UsuarioLogueado.Id_Rol);
                 if (perm.Where(x => x.Modulo == "Usuarios").FirstOrDefault() != null)
                 {
@@ -350,13 +360,50 @@ namespace InversionesJK.UI
                 {
                     maquinasToolStripMenuItem.Visible = true;
                 }
+                if (perm.Where(x => x.Modulo == "ReporteVentas" || x.Modulo == "ReporteMaquinas" || x.Modulo == "ReporteLoterias" || x.Modulo == "BitacoraSesiones" || x.Modulo == "BitacoraMovimientos").FirstOrDefault() != null)
+                {
+                    reportesToolStripMenuItem.Visible = true;
+                }
                 if (perm.Where(x => x.Modulo == "ReporteVentas").FirstOrDefault() != null)
                 {
                     ventasToolStripMenuItem.Visible = true;
                 }
-                //UsuarioLogueado = new EUsuarios();
-                //UsuarioLogueado.Id_Usuario = 1;
-                //UsuarioLogueado.Id_Rol = 1;
+                if (perm.Where(x => x.Modulo == "ReporteMaquinas").FirstOrDefault() != null)
+                {
+                    maquinasToolStripMenuItem1.Visible = true;
+                }
+                if (perm.Where(x => x.Modulo == "ReporteLoterias").FirstOrDefault() != null)
+                {
+                    loteriasToolStripMenuItem.Visible = true;
+                }
+                if (perm.Where(x => x.Modulo == "BitacoraSesiones").FirstOrDefault() != null)
+                {
+                    ingresoYSalidasUsuariosToolStripMenuItem.Visible = true;
+                }
+                if (perm.Where(x => x.Modulo == "BitacoraMovimientos").FirstOrDefault() != null)
+                {
+                    movimientosToolStripMenuItem.Visible = true;
+                }   
+                if (perm.Where(x => x.Modulo == "Loterias" && x.Accion=="Agregar").FirstOrDefault() != null)
+                {
+                    agregarToolStripMenuItem2.Visible = true;
+                }
+                if (perm.Where(x => x.Modulo == "Maquinas" && x.Accion == "Agregar").FirstOrDefault() != null)
+                {
+                    agregarToolStripMenuItem3.Visible = true;
+                }
+                if (perm.Where(x => x.Modulo == "Roles" && x.Accion == "Agregar").FirstOrDefault() != null)
+                {
+                    agregarToolStripMenuItem1.Visible = true;
+                }
+                if (perm.Where(x => x.Modulo == "Usuarios" && x.Accion == "Agregar").FirstOrDefault() != null)
+                {
+                    agregarToolStripMenuItem.Visible = true;
+                }
+                if (perm.Where(x => x.Modulo == "Ventas" && x.Accion == "Agregar").FirstOrDefault() != null)
+                {
+                    agregarToolStripMenuItem4.Visible = true;
+                }
             }
             catch (Exception ex)
             {
