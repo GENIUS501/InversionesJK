@@ -1,4 +1,5 @@
-﻿using Negocios;
+﻿using Entidades;
+using Negocios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -75,6 +76,46 @@ namespace InversionesJK.UI
                 FRM.Lista = Negocios.Mostrar();
                 FRM.MdiParent = this.MdiParent;
                 FRM.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btn_imprimir_maquina_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this.txt_nombre.Text != "")
+                {
+                    NMaquinas Negocios = new NMaquinas();
+                    Renderizar(Negocios.Mostrar().Where(x => x.Nombre_maquina.Contains(this.txt_nombre.Text)).ToList());
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void Renderizar(List<EMaquinas> Lista)
+        {
+            VisorReporteMaquinas FRM = new VisorReporteMaquinas();
+            FRM.Usuario = Usuario;
+            FRM.Lista = Lista;
+            FRM.MdiParent = this.MdiParent;
+            FRM.Show();
+        }
+
+        private void btn_ubicacion_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this.txt_ubi_maq.Text != "")
+                {
+                    NMaquinas Negocios = new NMaquinas();
+                    Renderizar(Negocios.Mostrar().Where(x => x.Ubicacion_maquina.Contains(this.txt_ubi_maq.Text)).ToList());
+                }
             }
             catch (Exception ex)
             {

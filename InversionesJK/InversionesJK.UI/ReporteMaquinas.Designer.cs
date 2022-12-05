@@ -155,6 +155,7 @@ namespace InversionesJK.UI
             this.btn_ubicacion.Size = new System.Drawing.Size(25, 20);
             this.btn_ubicacion.TabIndex = 5;
             this.btn_ubicacion.UseVisualStyleBackColor = true;
+            this.btn_ubicacion.Click += new System.EventHandler(this.btn_ubicacion_Click);
             // 
             // btn_imprimir_maquina
             // 
@@ -165,6 +166,7 @@ namespace InversionesJK.UI
             this.btn_imprimir_maquina.Size = new System.Drawing.Size(25, 20);
             this.btn_imprimir_maquina.TabIndex = 2;
             this.btn_imprimir_maquina.UseVisualStyleBackColor = true;
+            this.btn_imprimir_maquina.Click += new System.EventHandler(this.btn_imprimir_maquina_Click);
             // 
             // label1
             // 

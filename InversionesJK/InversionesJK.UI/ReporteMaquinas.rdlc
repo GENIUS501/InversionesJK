@@ -55,7 +55,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Reporte de cantidad</Value>
+                    <Value>Reporte de maquinas</Value>
                     <Style>
                       <FontSize>12pt</FontSize>
                       <FontWeight>Bold</FontWeight>
@@ -89,7 +89,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>GSCR SOLUTIONS</Value>
+                    <Value>Inversiones JK</Value>
                     <Style>
                       <FontSize>22pt</FontSize>
                       <FontWeight>Bold</FontWeight>
