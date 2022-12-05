@@ -417,5 +417,20 @@ namespace InversionesJK.UI
                 MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void movimientosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Bitacora_Movimientos frm = new Bitacora_Movimientos();
+                frm.Usuario = UsuarioLogueado.Usuario;
+                frm.MdiParent = this;
+                frm.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

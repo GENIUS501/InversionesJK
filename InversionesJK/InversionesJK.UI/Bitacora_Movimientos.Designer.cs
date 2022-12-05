@@ -32,7 +32,7 @@ namespace InversionesJK.UI
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Bitacora_Movimientos));
             this.btn_imprimir = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.dat_sesiones = new System.Windows.Forms.DataGridView();
+            this.dat_principal = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btn_fecha = new System.Windows.Forms.Button();
             this.btn_nombre = new System.Windows.Forms.Button();
@@ -47,7 +47,7 @@ namespace InversionesJK.UI
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dat_sesiones)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dat_principal)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,17 +71,17 @@ namespace InversionesJK.UI
             this.pictureBox1.TabIndex = 98;
             this.pictureBox1.TabStop = false;
             // 
-            // dat_sesiones
+            // dat_principal
             // 
-            this.dat_sesiones.AllowUserToAddRows = false;
-            this.dat_sesiones.AllowUserToDeleteRows = false;
-            this.dat_sesiones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dat_sesiones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dat_sesiones.Location = new System.Drawing.Point(12, 171);
-            this.dat_sesiones.Name = "dat_sesiones";
-            this.dat_sesiones.ReadOnly = true;
-            this.dat_sesiones.Size = new System.Drawing.Size(777, 202);
-            this.dat_sesiones.TabIndex = 97;
+            this.dat_principal.AllowUserToAddRows = false;
+            this.dat_principal.AllowUserToDeleteRows = false;
+            this.dat_principal.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dat_principal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dat_principal.Location = new System.Drawing.Point(12, 171);
+            this.dat_principal.Name = "dat_principal";
+            this.dat_principal.ReadOnly = true;
+            this.dat_principal.Size = new System.Drawing.Size(777, 202);
+            this.dat_principal.TabIndex = 97;
             // 
             // groupBox1
             // 
@@ -221,15 +221,18 @@ namespace InversionesJK.UI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btn_imprimir);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.dat_sesiones);
+            this.Controls.Add(this.dat_principal);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
             this.Name = "Bitacora_Movimientos";
             this.Text = "Bitacora_Movimientos";
+            this.Load += new System.EventHandler(this.Bitacora_Movimientos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dat_sesiones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dat_principal)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -240,7 +243,7 @@ namespace InversionesJK.UI
 
         private System.Windows.Forms.Button btn_imprimir;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.DataGridView dat_sesiones;
+        private System.Windows.Forms.DataGridView dat_principal;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btn_fecha;
         private System.Windows.Forms.Button btn_nombre;

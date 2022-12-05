@@ -243,6 +243,7 @@ namespace InversionesJK.UI
             this.movimientosToolStripMenuItem.Name = "movimientosToolStripMenuItem";
             this.movimientosToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
             this.movimientosToolStripMenuItem.Text = "Movimientos";
+            this.movimientosToolStripMenuItem.Click += new System.EventHandler(this.movimientosToolStripMenuItem_Click);
             // 
             // maquinasToolStripMenuItem1
             // 
