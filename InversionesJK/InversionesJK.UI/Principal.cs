@@ -238,6 +238,7 @@ namespace InversionesJK.UI
             try
             {
                 addReportLotteries = new ReporteLoteria();
+                addReportLotteries.Usuario = UsuarioLogueado.Usuario;
                 addReportLotteries.MdiParent = this;
                 addReportLotteries.Show();
             }
@@ -346,6 +347,18 @@ namespace InversionesJK.UI
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void Principal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            try
+            {
+                Application.Exit();
+            }
+            catch (Exception)
+            {
+                Application.Exit();
             }
         }
     }

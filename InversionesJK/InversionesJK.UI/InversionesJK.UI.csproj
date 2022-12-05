@@ -196,6 +196,12 @@
       <DependentUpon>ReporteVentas.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="VisorReporteLoteria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VisorReporteLoteria.Designer.cs">
+      <DependentUpon>VisorReporteLoteria.cs</DependentUpon>
+    </Compile>
     <Compile Include="VisorReporteMaquinas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -265,6 +271,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ReporteLoteria.rdlc" />
     <EmbeddedResource Include="ReporteLoteria.resx">
       <DependentUpon>ReporteLoteria.cs</DependentUpon>
     </EmbeddedResource>
@@ -275,6 +282,9 @@
     <EmbeddedResource Include="ReporteVentas.rdlc" />
     <EmbeddedResource Include="ReporteVentas.resx">
       <DependentUpon>ReporteVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VisorReporteLoteria.resx">
+      <DependentUpon>VisorReporteLoteria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VisorReporteMaquinas.resx">
       <DependentUpon>VisorReporteMaquinas.cs</DependentUpon>

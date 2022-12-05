@@ -107,6 +107,7 @@ namespace InversionesJK.UI
             this.btn_buscar_fecha.Size = new System.Drawing.Size(25, 20);
             this.btn_buscar_fecha.TabIndex = 53;
             this.btn_buscar_fecha.UseVisualStyleBackColor = true;
+            this.btn_buscar_fecha.Click += new System.EventHandler(this.btn_buscar_fecha_Click);
             // 
             // btn_buscar
             // 
@@ -117,6 +118,7 @@ namespace InversionesJK.UI
             this.btn_buscar.Size = new System.Drawing.Size(25, 20);
             this.btn_buscar.TabIndex = 52;
             this.btn_buscar.UseVisualStyleBackColor = true;
+            this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
             // 
             // label2
             // 
@@ -136,6 +138,7 @@ namespace InversionesJK.UI
             this.btn_imprimir.Size = new System.Drawing.Size(62, 54);
             this.btn_imprimir.TabIndex = 6;
             this.btn_imprimir.UseVisualStyleBackColor = true;
+            this.btn_imprimir.Click += new System.EventHandler(this.btn_imprimir_Click);
             // 
             // txt_loteria
             // 
@@ -148,7 +151,7 @@ namespace InversionesJK.UI
             // 
             this.btn_imprimir_fecha.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_imprimir_fecha.BackgroundImage")));
             this.btn_imprimir_fecha.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_imprimir_fecha.Location = new System.Drawing.Point(146, 101);
+            this.btn_imprimir_fecha.Location = new System.Drawing.Point(146, 99);
             this.btn_imprimir_fecha.Name = "btn_imprimir_fecha";
             this.btn_imprimir_fecha.Size = new System.Drawing.Size(25, 20);
             this.btn_imprimir_fecha.TabIndex = 5;
@@ -179,6 +182,7 @@ namespace InversionesJK.UI
             this.txt_id_loteria.Name = "txt_id_loteria";
             this.txt_id_loteria.Size = new System.Drawing.Size(100, 20);
             this.txt_id_loteria.TabIndex = 58;
+            this.txt_id_loteria.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_id_loteria_KeyPress);
             // 
             // ReporteLoteria
             // 
