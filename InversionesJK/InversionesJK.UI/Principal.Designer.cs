@@ -236,6 +236,7 @@ namespace InversionesJK.UI
             this.ingresoYSalidasUsuariosToolStripMenuItem.Name = "ingresoYSalidasUsuariosToolStripMenuItem";
             this.ingresoYSalidasUsuariosToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
             this.ingresoYSalidasUsuariosToolStripMenuItem.Text = "Ingreso y salidas Usuarios";
+            this.ingresoYSalidasUsuariosToolStripMenuItem.Click += new System.EventHandler(this.ingresoYSalidasUsuariosToolStripMenuItem_Click);
             // 
             // movimientosToolStripMenuItem
             // 

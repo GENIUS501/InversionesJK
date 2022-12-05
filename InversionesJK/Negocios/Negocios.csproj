@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helper.cs" />
+    <Compile Include="NBitacora_movimientos.cs" />
     <Compile Include="NBitacora_Sesiones.cs" />
     <Compile Include="NLoterias.cs" />
     <Compile Include="NMaquinas.cs" />

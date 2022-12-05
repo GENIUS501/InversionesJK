@@ -361,5 +361,20 @@ namespace InversionesJK.UI
                 Application.Exit();
             }
         }
+
+        private void ingresoYSalidasUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Bitacora_Ingresos frm = new Bitacora_Ingresos();
+                frm.Usuario = UsuarioLogueado.Usuario;
+                frm.MdiParent = this;
+                frm.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

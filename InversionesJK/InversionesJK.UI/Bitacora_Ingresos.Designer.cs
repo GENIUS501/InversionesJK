@@ -39,13 +39,13 @@ namespace InversionesJK.UI
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dat_sesiones = new System.Windows.Forms.DataGridView();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btn_nombre = new System.Windows.Forms.Button();
             this.btn_fecha = new System.Windows.Forms.Button();
+            this.btn_nombre = new System.Windows.Forms.Button();
+            this.dat_principal = new System.Windows.Forms.DataGridView();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_imprimir = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dat_sesiones)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dat_principal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,7 +61,7 @@ namespace InversionesJK.UI
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(212, 86);
+            this.label2.Location = new System.Drawing.Point(115, 85);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(62, 13);
             this.label2.TabIndex = 33;
@@ -78,7 +78,7 @@ namespace InversionesJK.UI
             // txt_fecha_fin
             // 
             this.txt_fecha_fin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.txt_fecha_fin.Location = new System.Drawing.Point(215, 102);
+            this.txt_fecha_fin.Location = new System.Drawing.Point(118, 102);
             this.txt_fecha_fin.Name = "txt_fecha_fin";
             this.txt_fecha_fin.Size = new System.Drawing.Size(121, 20);
             this.txt_fecha_fin.TabIndex = 5;
@@ -113,7 +113,7 @@ namespace InversionesJK.UI
             // 
             this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.Location = new System.Drawing.Point(384, 102);
+            this.button3.Location = new System.Drawing.Point(276, 102);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(25, 20);
             this.button3.TabIndex = 7;
@@ -133,32 +133,20 @@ namespace InversionesJK.UI
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(13, 18);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(451, 147);
+            this.groupBox1.Size = new System.Drawing.Size(315, 147);
             this.groupBox1.TabIndex = 92;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos de Busqueda";
             // 
-            // dat_sesiones
+            // btn_fecha
             // 
-            this.dat_sesiones.AllowUserToAddRows = false;
-            this.dat_sesiones.AllowUserToDeleteRows = false;
-            this.dat_sesiones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dat_sesiones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dat_sesiones.Location = new System.Drawing.Point(12, 171);
-            this.dat_sesiones.Name = "dat_sesiones";
-            this.dat_sesiones.ReadOnly = true;
-            this.dat_sesiones.Size = new System.Drawing.Size(777, 202);
-            this.dat_sesiones.TabIndex = 93;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(470, 24);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(318, 116);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 94;
-            this.pictureBox1.TabStop = false;
+            this.btn_fecha.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_fecha.BackgroundImage")));
+            this.btn_fecha.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_fecha.Location = new System.Drawing.Point(245, 102);
+            this.btn_fecha.Name = "btn_fecha";
+            this.btn_fecha.Size = new System.Drawing.Size(25, 20);
+            this.btn_fecha.TabIndex = 56;
+            this.btn_fecha.UseVisualStyleBackColor = true;
             // 
             // btn_nombre
             // 
@@ -170,15 +158,27 @@ namespace InversionesJK.UI
             this.btn_nombre.TabIndex = 55;
             this.btn_nombre.UseVisualStyleBackColor = true;
             // 
-            // btn_fecha
+            // dat_principal
             // 
-            this.btn_fecha.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_fecha.BackgroundImage")));
-            this.btn_fecha.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_fecha.Location = new System.Drawing.Point(353, 102);
-            this.btn_fecha.Name = "btn_fecha";
-            this.btn_fecha.Size = new System.Drawing.Size(25, 20);
-            this.btn_fecha.TabIndex = 56;
-            this.btn_fecha.UseVisualStyleBackColor = true;
+            this.dat_principal.AllowUserToAddRows = false;
+            this.dat_principal.AllowUserToDeleteRows = false;
+            this.dat_principal.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dat_principal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dat_principal.Location = new System.Drawing.Point(12, 171);
+            this.dat_principal.Name = "dat_principal";
+            this.dat_principal.ReadOnly = true;
+            this.dat_principal.Size = new System.Drawing.Size(777, 202);
+            this.dat_principal.TabIndex = 93;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(334, 24);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(454, 141);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 94;
+            this.pictureBox1.TabStop = false;
             // 
             // btn_imprimir
             // 
@@ -194,16 +194,19 @@ namespace InversionesJK.UI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btn_imprimir);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.dat_sesiones);
+            this.Controls.Add(this.dat_principal);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
             this.Name = "Bitacora_Ingresos";
             this.Text = "Bitacora Ingresos";
+            this.Load += new System.EventHandler(this.Bitacora_Ingresos_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dat_sesiones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dat_principal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -220,7 +223,7 @@ namespace InversionesJK.UI
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dat_sesiones;
+        private System.Windows.Forms.DataGridView dat_principal;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btn_fecha;
         private System.Windows.Forms.Button btn_nombre;
