@@ -15,7 +15,7 @@ namespace InversionesJK.UI
     public partial class ReporteVentas : Form
     {
         public string Usuario { get; set; }
-       // public int IdUsuario { get; set; }
+        // public int IdUsuario { get; set; }
         public ReporteVentas()
         {
             InitializeComponent();
@@ -26,7 +26,24 @@ namespace InversionesJK.UI
             try
             {
                 NVentas Negocios = new NVentas();
-                this.dat_principal.DataSource = Negocios.Mostrar();
+                NLoterias NegociosLoterias = new NLoterias();
+                NMaquinas NegociosMaquinas = new NMaquinas();
+                NUsuarios NegociosUsuarios = new NUsuarios();
+                this.dat_principal.DataSource = Negocios.Mostrar().Select(x => new
+                {
+                    ID_venta = x.ID_venta,
+                    fecha_venta = x.fecha_venta,
+                    Cantidad_de_Venta = x.Cantidad_de_Venta,
+                    Multiplicar_Apuesta = x.Multiplicar_Apuesta,
+                    Apuesta = x.Apuesta,
+                    Porcentaje_Ganancia = x.Porcentaje_Ganancia + "%",
+                    Premio_a_pagar = x.Premio_a_pagar,
+                    Usuario = NegociosUsuarios.Mostrar().Where(y => y.Id_Usuario == x.Id_Usuario).Select(y => y.Usuario).FirstOrDefault(),
+                    Nombre_loteria = NegociosLoterias.Mostrar().Where(y => y.ID_loteria == x.ID_loteria).Select(y => y.Nombre_loteria).FirstOrDefault(),
+                    Nombre_maquina = NegociosMaquinas.Mostrar().Where(y => y.ID_maquina == x.ID_maquina).Select(y => y.Nombre_maquina).FirstOrDefault(),
+                    Comision = x.Cantidad_de_Venta * x.Porcentaje_Ganancia / 100
+                }
+                    ).ToList();
             }
             catch (Exception ex)
             {
@@ -38,11 +55,11 @@ namespace InversionesJK.UI
         {
             try
             {
-                if(this.txt_maquina.Text!="")
+                if (this.txt_maquina.Text != "")
                 {
                     NVentas Negocios = new NVentas();
                     int IdVenta = int.Parse(this.txt_maquina.Text);
-                    this.dat_principal.DataSource = Negocios.Mostrar().Where(x=>x.ID_venta==IdVenta).ToList();
+                    this.dat_principal.DataSource = Negocios.Mostrar().Where(x => x.ID_venta == IdVenta).ToList();
                 }
             }
             catch (Exception ex)
@@ -58,7 +75,7 @@ namespace InversionesJK.UI
                 if (this.dtp_fecha_maq.Text != "")
                 {
                     NVentas Negocios = new NVentas();
-                    this.dat_principal.DataSource = Negocios.Mostrar().Where(x => x.fecha_venta==Convert.ToDateTime(dtp_fecha_maq.Value.ToString())).ToList();
+                    this.dat_principal.DataSource = Negocios.Mostrar().Where(x => x.fecha_venta == Convert.ToDateTime(dtp_fecha_maq.Value.ToString())).ToList();
                 }
             }
             catch (Exception ex)
