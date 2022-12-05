@@ -36,8 +36,8 @@ namespace InversionesJK.UI
             this.txt_fecha_fin = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_usuario = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btn_imprimir_nombre = new System.Windows.Forms.Button();
+            this.btn_imprimir_fechas = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btn_fecha = new System.Windows.Forms.Button();
             this.btn_nombre = new System.Windows.Forms.Button();
@@ -99,32 +99,34 @@ namespace InversionesJK.UI
             this.txt_usuario.Size = new System.Drawing.Size(100, 20);
             this.txt_usuario.TabIndex = 0;
             // 
-            // button2
+            // btn_imprimir_nombre
             // 
-            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Location = new System.Drawing.Point(146, 44);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(25, 20);
-            this.button2.TabIndex = 2;
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_imprimir_nombre.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_imprimir_nombre.BackgroundImage")));
+            this.btn_imprimir_nombre.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_imprimir_nombre.Location = new System.Drawing.Point(146, 44);
+            this.btn_imprimir_nombre.Name = "btn_imprimir_nombre";
+            this.btn_imprimir_nombre.Size = new System.Drawing.Size(25, 20);
+            this.btn_imprimir_nombre.TabIndex = 2;
+            this.btn_imprimir_nombre.UseVisualStyleBackColor = true;
+            this.btn_imprimir_nombre.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // btn_imprimir_fechas
             // 
-            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.Location = new System.Drawing.Point(276, 102);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(25, 20);
-            this.button3.TabIndex = 7;
-            this.button3.UseVisualStyleBackColor = true;
+            this.btn_imprimir_fechas.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_imprimir_fechas.BackgroundImage")));
+            this.btn_imprimir_fechas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_imprimir_fechas.Location = new System.Drawing.Point(276, 102);
+            this.btn_imprimir_fechas.Name = "btn_imprimir_fechas";
+            this.btn_imprimir_fechas.Size = new System.Drawing.Size(25, 20);
+            this.btn_imprimir_fechas.TabIndex = 7;
+            this.btn_imprimir_fechas.UseVisualStyleBackColor = true;
+            this.btn_imprimir_fechas.Click += new System.EventHandler(this.btn_imprimir_fechas_Click);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btn_fecha);
             this.groupBox1.Controls.Add(this.btn_nombre);
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.btn_imprimir_fechas);
+            this.groupBox1.Controls.Add(this.btn_imprimir_nombre);
             this.groupBox1.Controls.Add(this.txt_usuario);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txt_fecha_fin);
@@ -147,6 +149,7 @@ namespace InversionesJK.UI
             this.btn_fecha.Size = new System.Drawing.Size(25, 20);
             this.btn_fecha.TabIndex = 56;
             this.btn_fecha.UseVisualStyleBackColor = true;
+            this.btn_fecha.Click += new System.EventHandler(this.btn_fecha_Click);
             // 
             // btn_nombre
             // 
@@ -157,6 +160,7 @@ namespace InversionesJK.UI
             this.btn_nombre.Size = new System.Drawing.Size(25, 20);
             this.btn_nombre.TabIndex = 55;
             this.btn_nombre.UseVisualStyleBackColor = true;
+            this.btn_nombre.Click += new System.EventHandler(this.btn_nombre_Click);
             // 
             // dat_principal
             // 
@@ -189,6 +193,7 @@ namespace InversionesJK.UI
             this.btn_imprimir.Size = new System.Drawing.Size(62, 54);
             this.btn_imprimir.TabIndex = 95;
             this.btn_imprimir.UseVisualStyleBackColor = true;
+            this.btn_imprimir.Click += new System.EventHandler(this.btn_imprimir_Click);
             // 
             // Bitacora_Ingresos
             // 
@@ -220,8 +225,8 @@ namespace InversionesJK.UI
         private System.Windows.Forms.DateTimePicker txt_fecha_fin;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txt_usuario;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btn_imprimir_nombre;
+        private System.Windows.Forms.Button btn_imprimir_fechas;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dat_principal;
         private System.Windows.Forms.PictureBox pictureBox1;

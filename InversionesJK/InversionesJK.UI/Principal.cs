@@ -280,7 +280,21 @@ namespace InversionesJK.UI
         {
             try
             {
-                Application.Restart();
+                EBitacora_Sesiones Ses = new EBitacora_Sesiones();
+                NBitacora_Sesiones Negocios = new NBitacora_Sesiones();
+                Int32 FilasAfectadas;
+                Ses.codigo_ingreso_salida = Idsession;
+                Ses.fecha_hora_salida = DateTime.Now;
+                FilasAfectadas = Negocios.Modificar(Ses);
+                if (FilasAfectadas > 0)
+                {
+                    Application.Restart();
+                }
+                else
+                {
+                    MessageBox.Show("Error al cerrar session!!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Application.Restart();
+                }
             }
             catch (Exception ex)
             {
@@ -292,7 +306,7 @@ namespace InversionesJK.UI
         {
             try
             {
-                Application.Exit();
+                Cerrar();
             }
             catch (Exception ex)
             {
@@ -354,10 +368,12 @@ namespace InversionesJK.UI
         {
             try
             {
-                Application.Exit();
+
+                Cerrar();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Application.Exit();
             }
         }
@@ -370,6 +386,31 @@ namespace InversionesJK.UI
                 frm.Usuario = UsuarioLogueado.Usuario;
                 frm.MdiParent = this;
                 frm.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void Cerrar()
+        {
+            try
+            {
+                EBitacora_Sesiones Ses = new EBitacora_Sesiones();
+                NBitacora_Sesiones Negocios = new NBitacora_Sesiones();
+                Int32 FilasAfectadas;
+                Ses.codigo_ingreso_salida = Idsession;
+                Ses.fecha_hora_salida = DateTime.Now;
+                FilasAfectadas = Negocios.Modificar(Ses);
+                if (FilasAfectadas > 0)
+                {
+                    Application.Exit();
+                }
+                else
+                {
+                    MessageBox.Show("Error al cerrar session!!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Application.Exit();
+                }
             }
             catch (Exception ex)
             {
