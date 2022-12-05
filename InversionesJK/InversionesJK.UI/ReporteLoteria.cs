@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Negocios;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,19 @@ namespace InversionesJK.UI
         public ReporteLoteria()
         {
             InitializeComponent();
+        }
+
+        private void ReporteLoteria_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                    NLoterias Negocios = new NLoterias();
+                    this.dat_principal.DataSource = Negocios.Mostrar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

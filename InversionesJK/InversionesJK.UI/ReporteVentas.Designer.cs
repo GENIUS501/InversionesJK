@@ -161,7 +161,7 @@ namespace InversionesJK.UI
             // 
             this.btn_imprimir_cedula.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_imprimir_cedula.BackgroundImage")));
             this.btn_imprimir_cedula.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_imprimir_cedula.Location = new System.Drawing.Point(146, 48);
+            this.btn_imprimir_cedula.Location = new System.Drawing.Point(146, 45);
             this.btn_imprimir_cedula.Name = "btn_imprimir_cedula";
             this.btn_imprimir_cedula.Size = new System.Drawing.Size(25, 20);
             this.btn_imprimir_cedula.TabIndex = 2;

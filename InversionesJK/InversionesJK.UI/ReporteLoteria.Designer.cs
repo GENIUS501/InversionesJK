@@ -33,16 +33,16 @@ namespace InversionesJK.UI
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dat_principal = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dtp_fecha_maq = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btn_buscar_fecha = new System.Windows.Forms.Button();
             this.btn_buscar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btn_imprimir = new System.Windows.Forms.Button();
             this.txt_loteria = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.btn_imprimir_cedula = new System.Windows.Forms.Button();
+            this.btn_imprimir_fecha = new System.Windows.Forms.Button();
+            this.btn_imprimir_nombre = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.txt_id_loteria = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dat_principal)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -72,15 +72,15 @@ namespace InversionesJK.UI
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dtp_fecha_maq);
+            this.groupBox1.Controls.Add(this.txt_id_loteria);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.button5);
+            this.groupBox1.Controls.Add(this.btn_buscar_fecha);
             this.groupBox1.Controls.Add(this.btn_buscar);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.button3);
+            this.groupBox1.Controls.Add(this.btn_imprimir);
             this.groupBox1.Controls.Add(this.txt_loteria);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.btn_imprimir_cedula);
+            this.groupBox1.Controls.Add(this.btn_imprimir_fecha);
+            this.groupBox1.Controls.Add(this.btn_imprimir_nombre);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(31, 38);
             this.groupBox1.Name = "groupBox1";
@@ -89,32 +89,24 @@ namespace InversionesJK.UI
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos de busqueda";
             // 
-            // dtp_fecha_maq
-            // 
-            this.dtp_fecha_maq.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_fecha_maq.Location = new System.Drawing.Point(6, 102);
-            this.dtp_fecha_maq.Name = "dtp_fecha_maq";
-            this.dtp_fecha_maq.Size = new System.Drawing.Size(100, 20);
-            this.dtp_fecha_maq.TabIndex = 58;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(6, 86);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(37, 13);
+            this.label4.Size = new System.Drawing.Size(47, 13);
             this.label4.TabIndex = 57;
-            this.label4.Text = "Fecha";
+            this.label4.Text = "Id loteria";
             // 
-            // button5
+            // btn_buscar_fecha
             // 
-            this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
-            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button5.Location = new System.Drawing.Point(115, 100);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(25, 20);
-            this.button5.TabIndex = 53;
-            this.button5.UseVisualStyleBackColor = true;
+            this.btn_buscar_fecha.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_buscar_fecha.BackgroundImage")));
+            this.btn_buscar_fecha.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_buscar_fecha.Location = new System.Drawing.Point(115, 100);
+            this.btn_buscar_fecha.Name = "btn_buscar_fecha";
+            this.btn_buscar_fecha.Size = new System.Drawing.Size(25, 20);
+            this.btn_buscar_fecha.TabIndex = 53;
+            this.btn_buscar_fecha.UseVisualStyleBackColor = true;
             // 
             // btn_buscar
             // 
@@ -135,15 +127,15 @@ namespace InversionesJK.UI
             this.label2.TabIndex = 51;
             this.label2.Text = "Imprimir todo";
             // 
-            // button3
+            // btn_imprimir
             // 
-            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.Location = new System.Drawing.Point(264, 45);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(62, 54);
-            this.button3.TabIndex = 6;
-            this.button3.UseVisualStyleBackColor = true;
+            this.btn_imprimir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_imprimir.BackgroundImage")));
+            this.btn_imprimir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_imprimir.Location = new System.Drawing.Point(264, 45);
+            this.btn_imprimir.Name = "btn_imprimir";
+            this.btn_imprimir.Size = new System.Drawing.Size(62, 54);
+            this.btn_imprimir.TabIndex = 6;
+            this.btn_imprimir.UseVisualStyleBackColor = true;
             // 
             // txt_loteria
             // 
@@ -152,25 +144,25 @@ namespace InversionesJK.UI
             this.txt_loteria.Size = new System.Drawing.Size(100, 20);
             this.txt_loteria.TabIndex = 0;
             // 
-            // button2
+            // btn_imprimir_fecha
             // 
-            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Location = new System.Drawing.Point(146, 101);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(25, 20);
-            this.button2.TabIndex = 5;
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_imprimir_fecha.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_imprimir_fecha.BackgroundImage")));
+            this.btn_imprimir_fecha.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_imprimir_fecha.Location = new System.Drawing.Point(146, 101);
+            this.btn_imprimir_fecha.Name = "btn_imprimir_fecha";
+            this.btn_imprimir_fecha.Size = new System.Drawing.Size(25, 20);
+            this.btn_imprimir_fecha.TabIndex = 5;
+            this.btn_imprimir_fecha.UseVisualStyleBackColor = true;
             // 
-            // btn_imprimir_cedula
+            // btn_imprimir_nombre
             // 
-            this.btn_imprimir_cedula.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_imprimir_cedula.BackgroundImage")));
-            this.btn_imprimir_cedula.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_imprimir_cedula.Location = new System.Drawing.Point(146, 48);
-            this.btn_imprimir_cedula.Name = "btn_imprimir_cedula";
-            this.btn_imprimir_cedula.Size = new System.Drawing.Size(25, 20);
-            this.btn_imprimir_cedula.TabIndex = 2;
-            this.btn_imprimir_cedula.UseVisualStyleBackColor = true;
+            this.btn_imprimir_nombre.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_imprimir_nombre.BackgroundImage")));
+            this.btn_imprimir_nombre.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_imprimir_nombre.Location = new System.Drawing.Point(146, 44);
+            this.btn_imprimir_nombre.Name = "btn_imprimir_nombre";
+            this.btn_imprimir_nombre.Size = new System.Drawing.Size(25, 20);
+            this.btn_imprimir_nombre.TabIndex = 2;
+            this.btn_imprimir_nombre.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -181,16 +173,26 @@ namespace InversionesJK.UI
             this.label1.TabIndex = 35;
             this.label1.Text = "Nombre de Loteria";
             // 
+            // txt_id_loteria
+            // 
+            this.txt_id_loteria.Location = new System.Drawing.Point(9, 100);
+            this.txt_id_loteria.Name = "txt_id_loteria";
+            this.txt_id_loteria.Size = new System.Drawing.Size(100, 20);
+            this.txt_id_loteria.TabIndex = 58;
+            // 
             // ReporteLoteria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dat_principal);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
             this.Name = "ReporteLoteria";
             this.Text = "Reporte Loteria";
+            this.Load += new System.EventHandler(this.ReporteLoteria_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dat_principal)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -204,15 +206,15 @@ namespace InversionesJK.UI
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridView dat_principal;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DateTimePicker dtp_fecha_maq;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btn_buscar_fecha;
         private System.Windows.Forms.Button btn_buscar;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btn_imprimir;
         private System.Windows.Forms.TextBox txt_loteria;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button btn_imprimir_cedula;
+        private System.Windows.Forms.Button btn_imprimir_fecha;
+        private System.Windows.Forms.Button btn_imprimir_nombre;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txt_id_loteria;
     }
 }
