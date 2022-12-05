@@ -38,7 +38,7 @@ namespace InversionesJK.UI
             this.btn_buscar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
-            this.txt_maquina = new System.Windows.Forms.TextBox();
+            this.txt_id_venta = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.btn_imprimir_cedula = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -68,7 +68,7 @@ namespace InversionesJK.UI
             this.groupBox1.Controls.Add(this.btn_buscar);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.txt_maquina);
+            this.groupBox1.Controls.Add(this.txt_id_venta);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.btn_imprimir_cedula);
             this.groupBox1.Controls.Add(this.label1);
@@ -138,12 +138,13 @@ namespace InversionesJK.UI
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // txt_maquina
+            // txt_id_venta
             // 
-            this.txt_maquina.Location = new System.Drawing.Point(9, 45);
-            this.txt_maquina.Name = "txt_maquina";
-            this.txt_maquina.Size = new System.Drawing.Size(100, 20);
-            this.txt_maquina.TabIndex = 0;
+            this.txt_id_venta.Location = new System.Drawing.Point(9, 45);
+            this.txt_id_venta.Name = "txt_id_venta";
+            this.txt_id_venta.Size = new System.Drawing.Size(100, 20);
+            this.txt_id_venta.TabIndex = 0;
+            this.txt_id_venta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_id_venta_KeyPress);
             // 
             // button2
             // 
@@ -154,6 +155,7 @@ namespace InversionesJK.UI
             this.button2.Size = new System.Drawing.Size(25, 20);
             this.button2.TabIndex = 5;
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // btn_imprimir_cedula
             // 
@@ -164,6 +166,7 @@ namespace InversionesJK.UI
             this.btn_imprimir_cedula.Size = new System.Drawing.Size(25, 20);
             this.btn_imprimir_cedula.TabIndex = 2;
             this.btn_imprimir_cedula.UseVisualStyleBackColor = true;
+            this.btn_imprimir_cedula.Click += new System.EventHandler(this.btn_imprimir_cedula_Click);
             // 
             // label1
             // 
@@ -211,7 +214,7 @@ namespace InversionesJK.UI
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox txt_maquina;
+        private System.Windows.Forms.TextBox txt_id_venta;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btn_imprimir_cedula;
         private System.Windows.Forms.Label label1;

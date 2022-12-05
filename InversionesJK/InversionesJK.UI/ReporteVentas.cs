@@ -42,8 +42,7 @@ namespace InversionesJK.UI
                     Nombre_loteria = NegociosLoterias.Mostrar().Where(y => y.ID_loteria == x.ID_loteria).Select(y => y.Nombre_loteria).FirstOrDefault(),
                     Nombre_maquina = NegociosMaquinas.Mostrar().Where(y => y.ID_maquina == x.ID_maquina).Select(y => y.Nombre_maquina).FirstOrDefault(),
                     Comision = x.Cantidad_de_Venta * x.Porcentaje_Ganancia / 100
-                }
-                    ).ToList();
+                }).ToList();
             }
             catch (Exception ex)
             {
@@ -55,11 +54,27 @@ namespace InversionesJK.UI
         {
             try
             {
-                if (this.txt_maquina.Text != "")
+                if (this.txt_id_venta.Text != "")
                 {
                     NVentas Negocios = new NVentas();
-                    int IdVenta = int.Parse(this.txt_maquina.Text);
-                    this.dat_principal.DataSource = Negocios.Mostrar().Where(x => x.ID_venta == IdVenta).ToList();
+                    NLoterias NegociosLoterias = new NLoterias();
+                    NMaquinas NegociosMaquinas = new NMaquinas();
+                    NUsuarios NegociosUsuarios = new NUsuarios();
+                    int IdVenta = int.Parse(this.txt_id_venta.Text);
+                    this.dat_principal.DataSource = Negocios.Mostrar().Select(x => new
+                    {
+                        ID_venta = x.ID_venta,
+                        fecha_venta = x.fecha_venta,
+                        Cantidad_de_Venta = x.Cantidad_de_Venta,
+                        Multiplicar_Apuesta = x.Multiplicar_Apuesta,
+                        Apuesta = x.Apuesta,
+                        Porcentaje_Ganancia = x.Porcentaje_Ganancia + "%",
+                        Premio_a_pagar = x.Premio_a_pagar,
+                        Usuario = NegociosUsuarios.Mostrar().Where(y => y.Id_Usuario == x.Id_Usuario).Select(y => y.Usuario).FirstOrDefault(),
+                        Nombre_loteria = NegociosLoterias.Mostrar().Where(y => y.ID_loteria == x.ID_loteria).Select(y => y.Nombre_loteria).FirstOrDefault(),
+                        Nombre_maquina = NegociosMaquinas.Mostrar().Where(y => y.ID_maquina == x.ID_maquina).Select(y => y.Nombre_maquina).FirstOrDefault(),
+                        Comision = x.Cantidad_de_Venta * x.Porcentaje_Ganancia / 100
+                    }).Where(x=>x.ID_venta==IdVenta).ToList();
                 }
             }
             catch (Exception ex)
@@ -75,7 +90,23 @@ namespace InversionesJK.UI
                 if (this.dtp_fecha_maq.Text != "")
                 {
                     NVentas Negocios = new NVentas();
-                    this.dat_principal.DataSource = Negocios.Mostrar().Where(x => x.fecha_venta == Convert.ToDateTime(dtp_fecha_maq.Value.ToString())).ToList();
+                    NLoterias NegociosLoterias = new NLoterias();
+                    NMaquinas NegociosMaquinas = new NMaquinas();
+                    NUsuarios NegociosUsuarios = new NUsuarios();
+                    this.dat_principal.DataSource = Negocios.Mostrar().Select(x => new
+                    {
+                        ID_venta = x.ID_venta,
+                        fecha_venta = x.fecha_venta,
+                        Cantidad_de_Venta = x.Cantidad_de_Venta,
+                        Multiplicar_Apuesta = x.Multiplicar_Apuesta,
+                        Apuesta = x.Apuesta,
+                        Porcentaje_Ganancia = x.Porcentaje_Ganancia + "%",
+                        Premio_a_pagar = x.Premio_a_pagar,
+                        Usuario = NegociosUsuarios.Mostrar().Where(y => y.Id_Usuario == x.Id_Usuario).Select(y => y.Usuario).FirstOrDefault(),
+                        Nombre_loteria = NegociosLoterias.Mostrar().Where(y => y.ID_loteria == x.ID_loteria).Select(y => y.Nombre_loteria).FirstOrDefault(),
+                        Nombre_maquina = NegociosMaquinas.Mostrar().Where(y => y.ID_maquina == x.ID_maquina).Select(y => y.Nombre_maquina).FirstOrDefault(),
+                        Comision = x.Cantidad_de_Venta * x.Porcentaje_Ganancia / 100
+                    }).Where(x => x.fecha_venta == Convert.ToDateTime(dtp_fecha_maq.Text.ToString())).ToList();
                 }
             }
             catch (Exception ex)
@@ -103,6 +134,58 @@ namespace InversionesJK.UI
             frm.Lista = Lista;
             frm.MdiParent = this.MdiParent;
             frm.Show();
+        }
+
+        private void txt_id_venta_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            try
+            {
+                if (char.IsNumber(e.KeyChar) || char.IsControl(e.KeyChar))
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    e.Handled = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btn_imprimir_cedula_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this.txt_id_venta.Text != "")
+                {
+                    NVentas Negocios = new NVentas();
+                    int IdVenta = int.Parse(this.txt_id_venta.Text);
+                    Renderizar(Negocios.Mostrar().Where(x=>x.ID_venta==IdVenta).ToList());
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this.dtp_fecha_maq.Text != "")
+                {
+                    NVentas Negocios = new NVentas();
+                    Renderizar(Negocios.Mostrar().Where(x=>x.fecha_venta==Convert.ToDateTime(this.dtp_fecha_maq.Text)).ToList());
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
