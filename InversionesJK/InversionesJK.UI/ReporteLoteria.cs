@@ -105,5 +105,38 @@ namespace InversionesJK.UI
             frm.Lista = Lista;
             frm.Show();
         }
+
+        private void btn_imprimir_nombre_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this.txt_loteria.Text != "")
+                {
+                    NLoterias Negocios = new NLoterias();
+                    Renderizar(Negocios.Mostrar().Where(x => x.Nombre_loteria.Contains(this.txt_loteria.Text)).ToList());
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btn_imprimir_fecha_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this.txt_id_loteria.Text != "")
+                {
+                    int Id = int.Parse(this.txt_id_loteria.Text);
+                    NLoterias Negocios = new NLoterias();
+                    Renderizar(Negocios.Mostrar().Where(x => x.ID_loteria == Id).ToList());
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

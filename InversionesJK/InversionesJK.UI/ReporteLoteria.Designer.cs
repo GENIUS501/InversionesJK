@@ -156,6 +156,7 @@ namespace InversionesJK.UI
             this.btn_imprimir_fecha.Size = new System.Drawing.Size(25, 20);
             this.btn_imprimir_fecha.TabIndex = 5;
             this.btn_imprimir_fecha.UseVisualStyleBackColor = true;
+            this.btn_imprimir_fecha.Click += new System.EventHandler(this.btn_imprimir_fecha_Click);
             // 
             // btn_imprimir_nombre
             // 
@@ -166,6 +167,7 @@ namespace InversionesJK.UI
             this.btn_imprimir_nombre.Size = new System.Drawing.Size(25, 20);
             this.btn_imprimir_nombre.TabIndex = 2;
             this.btn_imprimir_nombre.UseVisualStyleBackColor = true;
+            this.btn_imprimir_nombre.Click += new System.EventHandler(this.btn_imprimir_nombre_Click);
             // 
             // label1
             // 
