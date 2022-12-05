@@ -223,6 +223,7 @@ namespace InversionesJK.UI
             try
             {
                 addReportSales = new ReporteVentas();
+                addReportSales.Usuario = UsuarioLogueado.Usuario;
                 addReportSales.MdiParent = this;
                 addReportSales.Show();
             }

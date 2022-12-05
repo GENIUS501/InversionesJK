@@ -2,7 +2,7 @@
 <xs:schema id="InversionesJKDataSet" targetNamespace="http://tempuri.org/InversionesJKDataSet.xsd" xmlns:mstns="http://tempuri.org/InversionesJKDataSet.xsd" xmlns="http://tempuri.org/InversionesJKDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" GeneratorFunctionsComponentClassName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" UserFunctionsComponentName="QueriesTableAdapter" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="InversionesJKConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="InversionesJKConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.InversionesJK.UI.Properties.Settings.GlobalReference.Default.InversionesJKConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
@@ -442,6 +442,36 @@ SELECT Id_Usuario, Cedula, Usuario, Clave, Id_Rol FROM Usuarios WHERE (Id_Usuari
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTable1TableAdapter" GeneratorDataComponentClassName="DataTable1TableAdapter" Name="DataTable1" UserDataComponentName="DataTable1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="InversionesJKConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Ventas.ID_venta, Ventas.fecha_venta, Ventas.Cantidad_de_Venta, Ventas.Premio_a_pagar, Ventas.Multiplicar_Apuesta, Ventas.Apuesta, Ventas.Porcentaje_Ganancia, Usuarios.Usuario, Maquinas.Nombre_maquina, 
+                         Loterias.Nombre_loteria
+FROM            Ventas INNER JOIN
+                         Usuarios ON Ventas.Id_Usuario = Usuarios.Id_Usuario INNER JOIN
+                         Maquinas ON Ventas.ID_maquina = Maquinas.ID_maquina INNER JOIN
+                         Loterias ON Ventas.ID_loteria = Loterias.ID_loteria</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID_venta" DataSetColumn="ID_venta" />
+              <Mapping SourceColumn="fecha_venta" DataSetColumn="fecha_venta" />
+              <Mapping SourceColumn="Cantidad_de_Venta" DataSetColumn="Cantidad_de_Venta" />
+              <Mapping SourceColumn="Premio_a_pagar" DataSetColumn="Premio_a_pagar" />
+              <Mapping SourceColumn="Multiplicar_Apuesta" DataSetColumn="Multiplicar_Apuesta" />
+              <Mapping SourceColumn="Apuesta" DataSetColumn="Apuesta" />
+              <Mapping SourceColumn="Porcentaje_Ganancia" DataSetColumn="Porcentaje_Ganancia" />
+              <Mapping SourceColumn="Usuario" DataSetColumn="Usuario" />
+              <Mapping SourceColumn="Nombre_maquina" DataSetColumn="Nombre_maquina" />
+              <Mapping SourceColumn="Nombre_loteria" DataSetColumn="Nombre_loteria" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -600,6 +630,41 @@ SELECT Id_Usuario, Cedula, Usuario, Clave, Id_Rol FROM Usuarios WHERE (Id_Usuari
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID_venta" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID_venta" msprop:Generator_ColumnPropNameInRow="ID_venta" msprop:Generator_ColumnPropNameInTable="ID_ventaColumn" msprop:Generator_UserColumnName="ID_venta" type="xs:int" />
+              <xs:element name="fecha_venta" msprop:Generator_ColumnVarNameInTable="columnfecha_venta" msprop:Generator_ColumnPropNameInRow="fecha_venta" msprop:Generator_ColumnPropNameInTable="fecha_ventaColumn" msprop:Generator_UserColumnName="fecha_venta" type="xs:dateTime" />
+              <xs:element name="Cantidad_de_Venta" msprop:Generator_ColumnVarNameInTable="columnCantidad_de_Venta" msprop:Generator_ColumnPropNameInRow="Cantidad_de_Venta" msprop:Generator_ColumnPropNameInTable="Cantidad_de_VentaColumn" msprop:Generator_UserColumnName="Cantidad_de_Venta" type="xs:double" />
+              <xs:element name="Premio_a_pagar" msprop:Generator_ColumnVarNameInTable="columnPremio_a_pagar" msprop:Generator_ColumnPropNameInRow="Premio_a_pagar" msprop:Generator_ColumnPropNameInTable="Premio_a_pagarColumn" msprop:Generator_UserColumnName="Premio_a_pagar" type="xs:double" />
+              <xs:element name="Multiplicar_Apuesta" msprop:Generator_ColumnVarNameInTable="columnMultiplicar_Apuesta" msprop:Generator_ColumnPropNameInRow="Multiplicar_Apuesta" msprop:Generator_ColumnPropNameInTable="Multiplicar_ApuestaColumn" msprop:Generator_UserColumnName="Multiplicar_Apuesta" type="xs:int" />
+              <xs:element name="Apuesta" msprop:Generator_ColumnVarNameInTable="columnApuesta" msprop:Generator_ColumnPropNameInRow="Apuesta" msprop:Generator_ColumnPropNameInTable="ApuestaColumn" msprop:Generator_UserColumnName="Apuesta" type="xs:double" />
+              <xs:element name="Porcentaje_Ganancia" msprop:Generator_ColumnVarNameInTable="columnPorcentaje_Ganancia" msprop:Generator_ColumnPropNameInRow="Porcentaje_Ganancia" msprop:Generator_ColumnPropNameInTable="Porcentaje_GananciaColumn" msprop:Generator_UserColumnName="Porcentaje_Ganancia" type="xs:int" />
+              <xs:element name="Usuario" msprop:Generator_ColumnVarNameInTable="columnUsuario" msprop:Generator_ColumnPropNameInRow="Usuario" msprop:Generator_ColumnPropNameInTable="UsuarioColumn" msprop:Generator_UserColumnName="Usuario">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Nombre_maquina" msprop:Generator_ColumnVarNameInTable="columnNombre_maquina" msprop:Generator_ColumnPropNameInRow="Nombre_maquina" msprop:Generator_ColumnPropNameInTable="Nombre_maquinaColumn" msprop:Generator_UserColumnName="Nombre_maquina">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Nombre_loteria" msprop:Generator_ColumnVarNameInTable="columnNombre_loteria" msprop:Generator_ColumnPropNameInRow="Nombre_loteria" msprop:Generator_ColumnPropNameInTable="Nombre_loteriaColumn" msprop:Generator_UserColumnName="Nombre_loteria">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Comision" msprop:Generator_ColumnVarNameInTable="columnComision" msprop:Generator_ColumnPropNameInRow="Comision" msprop:Generator_ColumnPropNameInTable="ComisionColumn" msprop:Generator_UserColumnName="Comision" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -629,6 +694,10 @@ SELECT Id_Usuario, Cedula, Usuario, Clave, Id_Rol FROM Usuarios WHERE (Id_Usuari
     <xs:unique name="Usuarios_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:Usuarios" />
       <xs:field xpath="mstns:Id_Usuario" />
+    </xs:unique>
+    <xs:unique name="DataTable1_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DataTable1" />
+      <xs:field xpath="mstns:ID_venta" />
     </xs:unique>
   </xs:element>
   <xs:annotation>

@@ -23,16 +23,23 @@ namespace InversionesJK.UI
 
         private void VisorReporteMaquinas_Load(object sender, EventArgs e)
         {
-            if (Lista.Count > 0)
+            try
             {
-                ReportDataSource Rds = new ReportDataSource("DataSet1", Lista);
-                this.reportViewer1.LocalReport.DataSources.Clear();
-                this.reportViewer1.LocalReport.DataSources.Add(Rds);
+                if (Lista.Count > 0)
+                {
+                    ReportDataSource Rds = new ReportDataSource("DataSet1", Lista);
+                    this.reportViewer1.LocalReport.DataSources.Clear();
+                    this.reportViewer1.LocalReport.DataSources.Add(Rds);
+                }
+                ReportParameter[] parameters = new ReportParameter[1];
+                parameters[0] = new ReportParameter("Usuario", Usuario.ToString());
+                reportViewer1.LocalReport.SetParameters(parameters);
+                this.reportViewer1.RefreshReport();
             }
-            ReportParameter[] parameters = new ReportParameter[1];
-            parameters[0] = new ReportParameter("Usuario", Usuario.ToString());
-            reportViewer1.LocalReport.SetParameters(parameters);
-            this.reportViewer1.RefreshReport();
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

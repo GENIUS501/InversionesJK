@@ -1,4 +1,5 @@
-﻿using Negocios;
+﻿using Entidades;
+using Negocios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,7 +15,7 @@ namespace InversionesJK.UI
     public partial class ReporteVentas : Form
     {
         public string Usuario { get; set; }
-        public int IdUsuario { get; set; }
+       // public int IdUsuario { get; set; }
         public ReporteVentas()
         {
             InitializeComponent();
@@ -64,6 +65,27 @@ namespace InversionesJK.UI
             {
                 MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                NVentas Negocios = new NVentas();
+                Renderizar(Negocios.Mostrar());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void Renderizar(List<EVentas> Lista)
+        {
+            VisorReporteVentas frm = new VisorReporteVentas();
+            frm.Usuario = Usuario;
+            frm.Lista = Lista;
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
         }
     }
 }
