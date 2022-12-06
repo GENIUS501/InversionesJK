@@ -194,6 +194,7 @@ namespace InversionesJK.UI
             try
             {
                 showSales = new MostrarVentas();
+                showSales.Usuario = UsuarioLogueado.Id_Usuario;
                 showSales.Id_Rol = UsuarioLogueado.Id_Rol;
                 showSales.MdiParent = this;
                 showSales.Show();

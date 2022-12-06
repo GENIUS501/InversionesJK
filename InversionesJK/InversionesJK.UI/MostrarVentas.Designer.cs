@@ -160,6 +160,7 @@ namespace InversionesJK.UI
             this.btn_buscar_nombre.Size = new System.Drawing.Size(25, 20);
             this.btn_buscar_nombre.TabIndex = 3;
             this.btn_buscar_nombre.UseVisualStyleBackColor = true;
+            this.btn_buscar_nombre.Click += new System.EventHandler(this.btn_buscar_nombre_Click);
             // 
             // label1
             // 
@@ -179,6 +180,7 @@ namespace InversionesJK.UI
             this.btn_buscar.Size = new System.Drawing.Size(25, 20);
             this.btn_buscar.TabIndex = 1;
             this.btn_buscar.UseVisualStyleBackColor = true;
+            this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
             // 
             // txt_buscar_venta
             // 
@@ -192,6 +194,7 @@ namespace InversionesJK.UI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dat_principal);
@@ -200,6 +203,7 @@ namespace InversionesJK.UI
             this.Controls.Add(this.btn_editar);
             this.Controls.Add(this.btn_agregar);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
             this.Name = "MostrarVentas";
             this.Text = "MostrarVentas";
             this.Load += new System.EventHandler(this.MostrarVentas_Load);

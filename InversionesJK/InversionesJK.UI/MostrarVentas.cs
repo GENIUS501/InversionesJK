@@ -32,7 +32,16 @@ namespace InversionesJK.UI
                 NLoterias NegociosLoterias = new NLoterias();
                 NMaquinas NegociosMaquinas = new NMaquinas();
                 NUsuarios NegociosUsuarios = new NUsuarios();
-                EVentas Entidad = new EVentas();
+                //EVentas Entidad = new EVentas();
+                this.cbo_maquina.DisplayMember = "Text";
+                this.cbo_maquina.ValueMember = "Value";
+
+                this.cbo_maquina.DataSource = NegociosMaquinas.Mostrar().Select(x => new
+                {
+                    Text = x.Nombre_maquina,
+                    Value = x.ID_maquina
+                }
+                ).ToArray();
                 dat_principal.DataSource = Negocios.Mostrar().Select(x => new
                 {
                     Id_Venta = x.ID_venta,
@@ -40,11 +49,11 @@ namespace InversionesJK.UI
                     Cantidad_de_venta = x.Cantidad_de_Venta,
                     Fecha_Venta = x.fecha_venta,
                     Multiplicar_Apuesta = x.Multiplicar_Apuesta,
-                    Porcentaje_Ganancia = x.Porcentaje_Ganancia+"%",
+                    Porcentaje_Ganancia = x.Porcentaje_Ganancia + "%",
                     Premio_a_pagar = x.Premio_a_pagar,
-                    Loteria = NegociosLoterias.Mostrar().Where(y=>y.ID_loteria==x.ID_loteria).Select(y=>y.Nombre_loteria).FirstOrDefault(),
-                    Maquina = NegociosMaquinas.Mostrar().Where(y=>y.ID_maquina==x.ID_maquina).Select(y=>y.Nombre_maquina).FirstOrDefault(),
-                    Usuario = NegociosUsuarios.Mostrar().Where(y=>y.Id_Usuario==x.Id_Usuario).Select(y=>y.Usuario).FirstOrDefault()
+                    Loteria = NegociosLoterias.Mostrar().Where(y => y.ID_loteria == x.ID_loteria).Select(y => y.Nombre_loteria).FirstOrDefault(),
+                    Maquina = NegociosMaquinas.Mostrar().Where(y => y.ID_maquina == x.ID_maquina).Select(y => y.Nombre_maquina).FirstOrDefault(),
+                    Usuario = NegociosUsuarios.Mostrar().Where(y => y.Id_Usuario == x.Id_Usuario).Select(y => y.Usuario).FirstOrDefault()
                 }
                 ).ToList();
                 valorcelda = -1;
@@ -204,6 +213,70 @@ namespace InversionesJK.UI
                 else
                 {
                     valorcelda = int.Parse(this.dat_principal.Rows[e.RowIndex].Cells[0].Value.ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btn_buscar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this.txt_buscar_venta.Text != "")
+                {
+                    NVentas Negocios = new NVentas();
+                    NLoterias NegociosLoterias = new NLoterias();
+                    NMaquinas NegociosMaquinas = new NMaquinas();
+                    NUsuarios NegociosUsuarios = new NUsuarios();
+                    int Id = int.Parse(this.txt_buscar_venta.Text);
+                    dat_principal.DataSource = Negocios.Mostrar().Select(x => new
+                    {
+                        Id_Venta = x.ID_venta,
+                        Apuesta = x.Apuesta,
+                        Cantidad_de_venta = x.Cantidad_de_Venta,
+                        Fecha_Venta = x.fecha_venta,
+                        Multiplicar_Apuesta = x.Multiplicar_Apuesta,
+                        Porcentaje_Ganancia = x.Porcentaje_Ganancia + "%",
+                        Premio_a_pagar = x.Premio_a_pagar,
+                        Loteria = NegociosLoterias.Mostrar().Where(y => y.ID_loteria == x.ID_loteria).Select(y => y.Nombre_loteria).FirstOrDefault(),
+                        Maquina = NegociosMaquinas.Mostrar().Where(y => y.ID_maquina == x.ID_maquina).Select(y => y.Nombre_maquina).FirstOrDefault(),
+                        Usuario = NegociosUsuarios.Mostrar().Where(y => y.Id_Usuario == x.Id_Usuario).Select(y => y.Usuario).FirstOrDefault()
+                    }).Where(l => l.Id_Venta == Id).ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btn_buscar_nombre_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this.txt_buscar_venta.Text != "")
+                {
+                    NVentas Negocios = new NVentas();
+                    NLoterias NegociosLoterias = new NLoterias();
+                    NMaquinas NegociosMaquinas = new NMaquinas();
+                    NUsuarios NegociosUsuarios = new NUsuarios();
+                    int Id = int.Parse(this.cbo_maquina.SelectedValue.ToString());
+                    dat_principal.DataSource = Negocios.Mostrar().Where(l => l.ID_maquina == Id).Select(x => new
+                    {
+                        Id_Venta = x.ID_venta,
+                        Apuesta = x.Apuesta,
+                        Cantidad_de_venta = x.Cantidad_de_Venta,
+                        Fecha_Venta = x.fecha_venta,
+                        Multiplicar_Apuesta = x.Multiplicar_Apuesta,
+                        Porcentaje_Ganancia = x.Porcentaje_Ganancia + "%",
+                        Premio_a_pagar = x.Premio_a_pagar,
+                        Loteria = NegociosLoterias.Mostrar().Where(y => y.ID_loteria == x.ID_loteria).Select(y => y.Nombre_loteria).FirstOrDefault(),
+                        Maquina = NegociosMaquinas.Mostrar().Where(y => y.ID_maquina == x.ID_maquina).Select(y => y.Nombre_maquina).FirstOrDefault(),
+                        Usuario = NegociosUsuarios.Mostrar().Where(y => y.Id_Usuario == x.Id_Usuario).Select(y => y.Usuario).FirstOrDefault()
+                    }).ToList();
                 }
             }
             catch (Exception ex)

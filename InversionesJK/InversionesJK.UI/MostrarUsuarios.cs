@@ -192,5 +192,37 @@ namespace InversionesJK.UI
                 MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btn_buscar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this.txt_buscar_cedula.Text != "")
+                {
+                    NUsuarios Negocios = new NUsuarios();
+                    this.dat_principal.DataSource = Negocios.Mostrar().Where(x => x.Cedula == this.txt_buscar_cedula.Text).ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btn_buscar_nombre_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this.txt_nombre.Text != "")
+                {
+                    NUsuarios Negocios = new NUsuarios();
+                    this.dat_principal.DataSource = Negocios.Mostrar().Where(x => x.Usuario == this.txt_nombre.Text).ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
