@@ -35,6 +35,13 @@ namespace InversionesJK.UI
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txt_comision_ganancia = new System.Windows.Forms.TextBox();
+            this.txt_premio = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.lbl_ganancia = new System.Windows.Forms.Label();
+            this.txt_porcentaje_ganancia = new System.Windows.Forms.TextBox();
             this.btn_calcular = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.txt_apuesta = new System.Windows.Forms.TextBox();
@@ -48,15 +55,8 @@ namespace InversionesJK.UI
             this.label1 = new System.Windows.Forms.Label();
             this.lbl_codigo_venta = new System.Windows.Forms.Label();
             this.txt_codigo_venta = new System.Windows.Forms.MaskedTextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txt_premio = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txt_venta = new System.Windows.Forms.TextBox();
-            this.txt_porcentaje_ganancia = new System.Windows.Forms.TextBox();
-            this.lbl_ganancia = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txt_comision_ganancia = new System.Windows.Forms.TextBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -128,6 +128,70 @@ namespace InversionesJK.UI
             this.groupBox1.TabIndex = 87;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos de la Venta";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.txt_comision_ganancia);
+            this.groupBox2.Controls.Add(this.txt_premio);
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Location = new System.Drawing.Point(6, 234);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(309, 80);
+            this.groupBox2.TabIndex = 44;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Resultados";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 31);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(115, 13);
+            this.label3.TabIndex = 25;
+            this.label3.Text = "Premio \"Total a pagar\"";
+            // 
+            // txt_comision_ganancia
+            // 
+            this.txt_comision_ganancia.Location = new System.Drawing.Point(178, 46);
+            this.txt_comision_ganancia.Name = "txt_comision_ganancia";
+            this.txt_comision_ganancia.ReadOnly = true;
+            this.txt_comision_ganancia.Size = new System.Drawing.Size(100, 20);
+            this.txt_comision_ganancia.TabIndex = 43;
+            // 
+            // txt_premio
+            // 
+            this.txt_premio.Location = new System.Drawing.Point(6, 47);
+            this.txt_premio.Name = "txt_premio";
+            this.txt_premio.ReadOnly = true;
+            this.txt_premio.Size = new System.Drawing.Size(126, 20);
+            this.txt_premio.TabIndex = 24;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(175, 31);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(105, 13);
+            this.label9.TabIndex = 42;
+            this.label9.Text = "Comision o ganancia";
+            // 
+            // lbl_ganancia
+            // 
+            this.lbl_ganancia.AutoSize = true;
+            this.lbl_ganancia.Location = new System.Drawing.Point(9, 192);
+            this.lbl_ganancia.Name = "lbl_ganancia";
+            this.lbl_ganancia.Size = new System.Drawing.Size(107, 13);
+            this.lbl_ganancia.TabIndex = 41;
+            this.lbl_ganancia.Text = "Porcentaje Ganancia";
+            // 
+            // txt_porcentaje_ganancia
+            // 
+            this.txt_porcentaje_ganancia.Location = new System.Drawing.Point(9, 208);
+            this.txt_porcentaje_ganancia.Name = "txt_porcentaje_ganancia";
+            this.txt_porcentaje_ganancia.Size = new System.Drawing.Size(100, 20);
+            this.txt_porcentaje_ganancia.TabIndex = 40;
+            this.txt_porcentaje_ganancia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_porcentaje_ganancia_KeyPress);
             // 
             // btn_calcular
             // 
@@ -247,22 +311,6 @@ namespace InversionesJK.UI
             this.txt_codigo_venta.Size = new System.Drawing.Size(121, 20);
             this.txt_codigo_venta.TabIndex = 23;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 31);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(115, 13);
-            this.label3.TabIndex = 25;
-            this.label3.Text = "Premio \"Total a pagar\"";
-            // 
-            // txt_premio
-            // 
-            this.txt_premio.Location = new System.Drawing.Point(6, 47);
-            this.txt_premio.Name = "txt_premio";
-            this.txt_premio.Size = new System.Drawing.Size(126, 20);
-            this.txt_premio.TabIndex = 24;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -279,52 +327,6 @@ namespace InversionesJK.UI
             this.txt_venta.Size = new System.Drawing.Size(100, 20);
             this.txt_venta.TabIndex = 4;
             this.txt_venta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_venta_KeyPress);
-            // 
-            // txt_porcentaje_ganancia
-            // 
-            this.txt_porcentaje_ganancia.Location = new System.Drawing.Point(9, 208);
-            this.txt_porcentaje_ganancia.Name = "txt_porcentaje_ganancia";
-            this.txt_porcentaje_ganancia.Size = new System.Drawing.Size(100, 20);
-            this.txt_porcentaje_ganancia.TabIndex = 40;
-            this.txt_porcentaje_ganancia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_porcentaje_ganancia_KeyPress);
-            // 
-            // lbl_ganancia
-            // 
-            this.lbl_ganancia.AutoSize = true;
-            this.lbl_ganancia.Location = new System.Drawing.Point(9, 192);
-            this.lbl_ganancia.Name = "lbl_ganancia";
-            this.lbl_ganancia.Size = new System.Drawing.Size(107, 13);
-            this.lbl_ganancia.TabIndex = 41;
-            this.lbl_ganancia.Text = "Porcentaje Ganancia";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(175, 31);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(105, 13);
-            this.label9.TabIndex = 42;
-            this.label9.Text = "Comision o ganancia";
-            // 
-            // txt_comision_ganancia
-            // 
-            this.txt_comision_ganancia.Location = new System.Drawing.Point(178, 46);
-            this.txt_comision_ganancia.Name = "txt_comision_ganancia";
-            this.txt_comision_ganancia.Size = new System.Drawing.Size(100, 20);
-            this.txt_comision_ganancia.TabIndex = 43;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.txt_comision_ganancia);
-            this.groupBox2.Controls.Add(this.txt_premio);
-            this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Location = new System.Drawing.Point(6, 234);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(309, 80);
-            this.groupBox2.TabIndex = 44;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Resultados";
             // 
             // errorProvider1
             // 
