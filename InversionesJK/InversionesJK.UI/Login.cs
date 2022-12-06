@@ -28,7 +28,7 @@ namespace InversionesJK.UI
                 int Id_Session = 0;
                 string pass = Helper.EncodePassword(string.Concat(this.txt_usuario.Text.ToString(), this.txt_pass.ToString()));
                 Usu = Negocios.Login(this.txt_usuario.Text, pass);
-                if (Usu.Id_Usuario != 0)
+                if (Usu!=null)
                 {
                     NBitacora_Sesiones Ses = new NBitacora_Sesiones();
                     EBitacora_Sesiones EntidadSesion = new EBitacora_Sesiones();
