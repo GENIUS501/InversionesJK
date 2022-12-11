@@ -136,6 +136,10 @@ namespace AccesoDatos
             {
                 using (TransactionScope Ts = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled))
                 {
+                    var Sesiones = db.Bitacora_ingreso_salida.Where(x => x.Id_Usuario == ID).FirstOrDefault();
+                    if(Sesiones != null) db.Entry(Sesiones).State = EntityState.Deleted;
+                    var Movimientosa = db.Bitacora_movimientos.Where(x => x.Id_Usuario == ID).FirstOrDefault();
+                    if (Movimientosa != null) db.Entry(Movimientosa).State = EntityState.Deleted;
                     var Objbd = db.Ventas.Where(x => x.ID_venta == ID).FirstOrDefault();
                     db.Entry(Objbd).State = EntityState.Deleted;
                     int Resultado = db.SaveChanges();
@@ -151,6 +155,7 @@ namespace AccesoDatos
                     }
                     Ts.Dispose();
                     return Resultado;
+
                 }
             }
             catch (Exception ex)

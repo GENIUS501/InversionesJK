@@ -31,8 +31,9 @@ namespace InversionesJK.UI
                     this.reportViewer1.LocalReport.DataSources.Clear();
                     this.reportViewer1.LocalReport.DataSources.Add(Rds);
                 }
-                ReportParameter[] parameters = new ReportParameter[1];
+                ReportParameter[] parameters = new ReportParameter[2];
                 parameters[0] = new ReportParameter("Usuario", Usuario.ToString());
+                parameters[1] = new ReportParameter("Fecha", DateTime.Now.ToString());
                 reportViewer1.LocalReport.SetParameters(parameters);
                 this.reportViewer1.RefreshReport();
             }
