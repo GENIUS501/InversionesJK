@@ -292,6 +292,7 @@ namespace InversionesJK.UI
                 this.cbo_maquina.SelectedValue = Obj.ID_maquina;
                 this.dtp_fecha_maq.Text = Obj.fecha_venta.ToString();
                 UsuarioRegistroVenta = Obj.Id_Usuario;
+                Calcular();
             }
         }
         private void AgregarVentas_Load(object sender, EventArgs e)
