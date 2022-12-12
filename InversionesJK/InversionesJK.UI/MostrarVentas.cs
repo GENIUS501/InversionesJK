@@ -257,7 +257,7 @@ namespace InversionesJK.UI
         {
             try
             {
-                if (this.txt_buscar_venta.Text != "")
+                if (this.cbo_maquina.Text != "")
                 {
                     NVentas Negocios = new NVentas();
                     NLoterias NegociosLoterias = new NLoterias();
