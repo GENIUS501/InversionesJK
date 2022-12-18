@@ -68,6 +68,7 @@ namespace InversionesJK.UI
             this.linkLabel1.TabIndex = 93;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Manual.pdf";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // pictureBox1
             // 
@@ -90,6 +91,7 @@ namespace InversionesJK.UI
             this.Controls.Add(this.label4);
             this.Name = "Ayuda";
             this.Text = "Ayuda";
+            this.Load += new System.EventHandler(this.Ayuda_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
