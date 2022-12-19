@@ -312,7 +312,9 @@
     <EmbeddedResource Include="Visor_Bitacora_Movimientos.resx">
       <DependentUpon>Visor_Bitacora_Movimientos.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Ayuda.pdf" />
+    <None Include="Ayuda.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="InversionesJKDataSet.xsc">
       <DependentUpon>InversionesJKDataSet.xsd</DependentUpon>
     </None>
